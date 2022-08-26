@@ -11,18 +11,18 @@ const users: UserDataType[] = [
   {
     id: 1,
     role: 'admin',
-    password: 'admin',
-    fullName: 'John Doe',
-    username: 'johndoe',
-    email: 'admin@materialize.com'
+    password: 'default123',
+    fullName: 'Administrador XProp',
+    username: 'admin',
+    email: 'dev@xprop.com.br'
   },
   {
     id: 2,
     role: 'client',
-    password: 'client',
-    fullName: 'Jane Doe',
-    username: 'janedoe',
-    email: 'client@materialize.com'
+    password: 'default123',
+    fullName: 'Cliente Padrão',
+    username: 'clientepadrao',
+    email: 'clientepadrao@xproptrading.com'
   }
 ]
 
