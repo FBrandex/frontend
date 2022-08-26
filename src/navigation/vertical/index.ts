@@ -138,18 +138,23 @@ const navigation = (): VerticalNavItemsType => {
       ],
     },
     {
-      title: 'Permissões',
+      title: 'Configurações',
       icon: CogOutline,
       children: [
         {
-          title: 'Funções',
-          path: '/settings/roles',
+          title: 'Permissões',
+          children: [
+            {
+              title: 'Funções',
+              path: '/settings/roles',
+            },
+            {
+              title: 'Atribuições',
+              path: '/settings/permissions',
+            },
+          ]
         },
-        {
-          title: 'Atribuições',
-          path: '/settings/permissions',
-        },
-      ]
+      ],
     },
     {
       title: 'Controle de Acesso',
