@@ -46,7 +46,7 @@ const MenuNavLink = styled(ListItemButton)<
   ListItemButtonProps & { component?: ElementType; target?: '_blank' | undefined }
 >(({ theme }) => ({
   width: '100%',
-  borderRadius: 4,
+  borderRadius: 8,
   transition: 'padding-left .25s ease-in-out',
   '&.active': {
     '&, &:hover': {
