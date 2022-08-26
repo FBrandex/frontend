@@ -18,7 +18,7 @@ interface Redux {
 
 // ** Fetch Invoices
 export const fetchData = createAsyncThunk('appInvoice/fetchData', async (params: DataParams) => {
-  const response = await axios.get('/apps/invoice/invoices', {
+  const response = await axios.get('/manage/orders/invoices', {
     params
   })
 
@@ -28,7 +28,7 @@ export const fetchData = createAsyncThunk('appInvoice/fetchData', async (params:
 export const deleteInvoice = createAsyncThunk(
   'appInvoice/deleteData',
   async (id: number | string, { getState, dispatch }: Redux) => {
-    const response = await axios.delete('/apps/invoice/delete', {
+    const response = await axios.delete('/manage/orders/delete', {
       data: id
     })
     await dispatch(fetchData(getState().invoice.params))

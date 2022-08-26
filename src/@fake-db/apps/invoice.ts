@@ -836,7 +836,7 @@ const data: { invoices: InvoiceType[] } = {
 // ------------------------------------------------
 // GET: Return Invoice List
 // ------------------------------------------------
-mock.onGet('/apps/invoice/invoices').reply(config => {
+mock.onGet('/manage/orders/invoices').reply(config => {
   const { q = '', status = '', dates = [] } = config.params ?? ''
   const queryLowered = q.toLowerCase()
   const filteredData = data.invoices.filter(invoice => {
@@ -920,7 +920,7 @@ mock.onGet('apps/invoice/single-invoice').reply(config => {
 // ------------------------------------------------
 // GET: Return Clients
 // ------------------------------------------------
-mock.onGet('/apps/invoice/clients').reply(() => {
+mock.onGet('/manage/orders/clients').reply(() => {
   const clients = data.invoices.map(invoice => {
     const { address, company, companyEmail, country, contact, name } = invoice
 
@@ -940,7 +940,7 @@ mock.onGet('/apps/invoice/clients').reply(() => {
 // ------------------------------------------------
 // DELETE: Deletes Invoice
 // ------------------------------------------------
-mock.onDelete('/apps/invoice/delete').reply(config => {
+mock.onDelete('/manage/orders/delete').reply(config => {
   // Get invoice id from URL
   const invoiceId = Number(config.data)
   const invoiceIndex = data.invoices.findIndex(t => t.id === invoiceId)

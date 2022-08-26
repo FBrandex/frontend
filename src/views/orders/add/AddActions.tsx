@@ -29,7 +29,7 @@ const AddActions = () => {
           <Button fullWidth sx={{ mb: 3.5 }} variant='contained' startIcon={<SendOutline />}>
             Send Invoice
           </Button>
-          <Link href='/apps/invoice/preview/4987' passHref>
+          <Link href='/manage/orders/preview/4987' passHref>
             <Button fullWidth component='a' sx={{ mb: 3.5 }} variant='outlined'>
               Preview
             </Button>

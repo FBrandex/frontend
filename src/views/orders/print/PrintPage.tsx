@@ -56,7 +56,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
 
   useEffect(() => {
     axios
-      .get('/apps/invoice/single-invoice', { params: { id } })
+      .get('/manage/orders/single-invoice', { params: { id } })
       .then(res => {
         setData(res.data)
         setError(false)
@@ -338,7 +338,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
           <Grid item xs={12}>
             <Alert severity='error'>
               Invoice with the id: {id} does not exist. Please check the list of invoices:{' '}
-              <Link href='/apps/invoice/list'>Invoice List</Link>
+              <Link href='/manage/orders/list'>Invoice List</Link>
             </Alert>
           </Grid>
         </Grid>

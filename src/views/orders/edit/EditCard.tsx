@@ -128,7 +128,7 @@ const EditCard = ({ data }: Props) => {
   const theme = useTheme()
 
   useEffect(() => {
-    axios.get('/apps/invoice/clients').then(response => {
+    axios.get('/manage/orders/clients').then(response => {
       if (response.data && clients === undefined) {
         setClients(response.data)
         setSelected(response.data[0].name)

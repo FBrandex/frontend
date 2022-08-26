@@ -105,7 +105,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
           <Download fontSize='small' sx={{ mr: 2 }} />
           Download
         </MenuItem>
-        <Link href={`/apps/invoice/edit/${id}`} passHref>
+        <Link href={`/manage/orders/edit/${id}`} passHref>
           <MenuItem>
             <PencilOutline fontSize='small' sx={{ mr: 2 }} />
             Edit
@@ -127,7 +127,7 @@ const columns = [
     minWidth: 90,
     headerName: '# ID',
     renderCell: ({ row }: CellType) => (
-      <Link href={`/apps/invoice/preview/${row.id}`} passHref>
+      <Link href={`/manage/orders/preview/${row.id}`} passHref>
         <StyledLink>{`#${row.id}`}</StyledLink>
       </Link>
     )
@@ -199,7 +199,7 @@ const columns = [
         </Tooltip>
         <Tooltip title='View'>
           <Box>
-            <Link href={`/apps/invoice/preview/${row.id}`} passHref>
+            <Link href={`/manage/orders/preview/${row.id}`} passHref>
               <IconButton size='small' component='a' sx={{ textDecoration: 'none' }}>
                 <EyeOutline />
               </IconButton>

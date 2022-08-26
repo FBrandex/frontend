@@ -5,7 +5,7 @@ import { ReactNode } from 'react'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Components Imports
-import PrintPage from 'src/views/orders/print/PrintPage'
+import PrintPage from 'src/views/manage/orders/print/PrintPage'
 
 const InvoicePrint = () => {
   return <PrintPage id='4987' />

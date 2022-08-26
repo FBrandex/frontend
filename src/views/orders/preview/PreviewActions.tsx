@@ -29,7 +29,7 @@ const PreviewActions = ({ id, toggleSendInvoiceDrawer, toggleAddPaymentDrawer }:
         >
           Send Invoice
         </Button>
-        <Link href={`/apps/invoice/edit/${id}`} passHref>
+        <Link href={`/manage/orders/edit/${id}`} passHref>
           <Button fullWidth component='a' sx={{ mb: 3.5 }} color='secondary' variant='outlined'>
             Edit Invoice
           </Button>

@@ -17,11 +17,11 @@ import AccountOutline from 'mdi-material-ui/AccountOutline'
 import BookmarkOutline from 'mdi-material-ui/BookmarkOutline'
 
 // ** Demo Components Imports
-import UserViewBilling from 'src/views/apps/user/view/UserViewBilling'
-import UserViewOverview from 'src/views/apps/user/view/UserViewOverview'
-import UserViewSecurity from 'src/views/apps/user/view/UserViewSecurity'
-import UserViewConnection from 'src/views/apps/user/view/UserViewConnection'
-import UserViewNotification from 'src/views/apps/user/view/UserViewNotification'
+import UserViewBilling from 'src/views/manage/users/view/UserViewBilling'
+import UserViewOverview from 'src/views/manage/users/view/UserViewOverview'
+import UserViewSecurity from 'src/views/manage/users/view/UserViewSecurity'
+import UserViewConnection from 'src/views/manage/users/view/UserViewConnection'
+import UserViewNotification from 'src/views/manage/users/view/UserViewNotification'
 
 // ** Types
 import { InvoiceType } from 'src/types/apps/invoiceTypes'

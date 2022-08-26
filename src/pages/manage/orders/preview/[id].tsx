@@ -8,14 +8,14 @@ import axios from 'axios'
 import { InvoiceType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import Preview from 'src/views/orders/preview/Preview'
+import Preview from 'src/views/manage/orders/preview/Preview'
 
 const InvoicePreview = ({ id }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <Preview id={id} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get('/apps/invoice/invoices')
+  const res = await axios.get('/manage/orders/invoices')
   const data: InvoiceType[] = await res.data.allData
 
   const paths = data.map((item: InvoiceType) => ({

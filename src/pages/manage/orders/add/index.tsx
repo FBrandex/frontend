@@ -57,10 +57,10 @@ const InvoiceAdd = ({ apiClientData, invoiceNumber }: InferGetStaticPropsType<ty
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const clientResponse = await axios.get('/apps/invoice/clients')
+  const clientResponse = await axios.get('/manage/orders/clients')
   const apiClientData: InvoiceClientType = clientResponse.data
 
-  const allInvoicesResponse = await axios.get('/apps/invoice/invoices', { params: { q: '', status: '' } })
+  const allInvoicesResponse = await axios.get('/manage/orders/invoices', { params: { q: '', status: '' } })
   const lastInvoiceNumber = Math.max(...allInvoicesResponse.data.allData.map((i: InvoiceType) => i.id))
 
   return {

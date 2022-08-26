@@ -85,13 +85,13 @@ const AvatarWithoutImageLink = styled(Link)(({ theme }) => ({
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
     return (
-      <AvatarWithImageLink href={`/apps/user/view/${row.id}`}>
+      <AvatarWithImageLink href={`/manage/users/view/${row.id}`}>
         <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 34, height: 34 }} />
       </AvatarWithImageLink>
     )
   } else {
     return (
-      <AvatarWithoutImageLink href={`/apps/user/view/${row.id}`}>
+      <AvatarWithoutImageLink href={`/manage/users/view/${row.id}`}>
         <CustomAvatar skin='light' color={row.avatarColor} sx={{ mr: 3, width: 34, height: 34, fontSize: '1rem' }}>
           {getInitials(row.fullName ? row.fullName : 'John Doe')}
         </CustomAvatar>
@@ -113,7 +113,7 @@ const columns = [
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Link href={`/apps/user/view/${id}`} passHref>
+            <Link href={`/manage/users/view/${id}`} passHref>
               <Typography
                 noWrap
                 component='a'
@@ -123,7 +123,7 @@ const columns = [
                 {fullName}
               </Typography>
             </Link>
-            <Link href={`/apps/user/view/${id}`} passHref>
+            <Link href={`/manage/users/view/${id}`} passHref>
               <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
                 @{username}
               </Typography>
@@ -199,7 +199,7 @@ const columns = [
     field: 'actions',
     headerName: 'Actions',
     renderCell: ({ row }: CellType) => (
-      <Link href={`/apps/user/view/${row.id}`} passHref>
+      <Link href={`/manage/users/view/${row.id}`} passHref>
         <IconButton>
           <EyeOutline />
         </IconButton>

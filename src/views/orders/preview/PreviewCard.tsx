@@ -365,7 +365,7 @@ const PreviewCard = ({ data }: Props) => {
         </Box>
         <CardContent>
           <Box sx={{ mt: 0, width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-            <Link href={`/apps/invoice/print/${data.invoice.id}`} passHref>
+            <Link href={`/manage/orders/print/${data.invoice.id}`} passHref>
               <Button sx={{ mr: 4 }} target='_blank' component='a' variant='contained'>
                 Print
               </Button>

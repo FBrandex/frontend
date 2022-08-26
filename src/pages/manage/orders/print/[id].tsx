@@ -14,14 +14,14 @@ import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Components Imports
-import PrintPage from 'src/views/orders/print/PrintPage'
+import PrintPage from 'src/views/manage/orders/print/PrintPage'
 
 const InvoicePrint = ({ id }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <PrintPage id={id} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get('/apps/invoice/invoices')
+  const res = await axios.get('/manage/orders/invoices')
   const data: InvoiceType[] = await res.data.allData
 
   const paths = data.map((item: InvoiceType) => ({

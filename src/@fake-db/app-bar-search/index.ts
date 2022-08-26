@@ -49,42 +49,42 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 7,
-    url: '/apps/invoice/list',
+    url: '/manage/orders/list',
     icon: 'FormatListNumbered',
     title: 'Invoice List',
     category: 'appsPages'
   },
   {
     id: 8,
-    url: '/apps/invoice/preview',
+    url: '/manage/orders/preview',
     icon: 'FileDocumentOutline',
     title: 'Invoice Preview',
     category: 'appsPages'
   },
   {
     id: 9,
-    url: '/apps/invoice/edit',
+    url: '/manage/orders/edit',
     icon: 'PencilOutline',
     title: 'Invoice Edit',
     category: 'appsPages'
   },
   {
     id: 10,
-    url: '/apps/invoice/add',
+    url: '/manage/orders/add',
     icon: 'Plus',
     title: 'Invoice Add',
     category: 'appsPages'
   },
   {
     id: 11,
-    url: '/apps/user/list',
+    url: '/users/list',
     icon: 'FormatListNumbered',
     title: 'User List',
     category: 'appsPages'
   },
   {
     id: 12,
-    url: '/apps/user/view',
+    url: '/users/view',
     icon: 'AccountOutline',
     title: 'User View',
     category: 'appsPages'

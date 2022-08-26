@@ -1,5 +1,5 @@
 // ** Demo Components Imports
-import Edit from 'src/views/orders/edit/Edit'
+import Edit from 'src/views/manage/orders/edit/Edit'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'

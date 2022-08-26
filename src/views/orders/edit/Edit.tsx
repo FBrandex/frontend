@@ -17,8 +17,8 @@ import axios from 'axios'
 // ** Demo Components Imports
 import EditCard from './EditCard'
 import EditActions from './EditActions'
-import AddPaymentDrawer from 'src/views/apps/invoice/shared-drawer/AddPaymentDrawer'
-import SendInvoiceDrawer from 'src/views/apps/invoice/shared-drawer/SendInvoiceDrawer'
+import AddPaymentDrawer from 'src/views/manage/orders/shared-drawer/AddPaymentDrawer'
+import SendInvoiceDrawer from 'src/views/manage/orders/shared-drawer/SendInvoiceDrawer'
 
 const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
   // ** State
@@ -32,7 +32,7 @@ const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
 
   useEffect(() => {
     axios
-      .get('/apps/invoice/single-invoice', { params: { id } })
+      .get('/manage/orders/single-invoice', { params: { id } })
       .then(res => {
         setData(res.data)
         setError(false)
@@ -68,7 +68,7 @@ const InvoiceEdit = ({ id }: InvoiceLayoutProps) => {
         <Grid item xs={12}>
           <Alert severity='error'>
             Invoice with the id: {id} does not exist. Please check the list of invoices:{' '}
-            <Link href='/apps/invoice/list'>Invoice List</Link>
+            <Link href='/manage/orders/list'>Invoice List</Link>
           </Alert>
         </Grid>
       </Grid>

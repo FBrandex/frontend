@@ -16,8 +16,8 @@ import { InvoiceType } from 'src/types/apps/invoiceTypes'
 import { UserLayoutType, UsersType } from 'src/types/apps/userTypes'
 
 // ** Demo Components Imports
-import UserViewLeft from 'src/views/apps/user/view/UserViewLeft'
-import UserViewRight from 'src/views/apps/user/view/UserViewRight'
+import UserViewLeft from 'src/views/manage/users/view/UserViewLeft'
+import UserViewRight from 'src/views/manage/users/view/UserViewRight'
 
 type Props = UserLayoutType & {
   invoiceData: InvoiceType[]
@@ -58,7 +58,7 @@ const UserView = ({ id, invoiceData }: Props) => {
         <Grid item xs={12}>
           <Alert severity='error'>
             User with the id: {id} does not exist. Please check the list of users:{' '}
-            <Link href='/apps/user/list'>User List</Link>
+            <Link href='/manage/users/list'>User List</Link>
           </Alert>
         </Grid>
       </Grid>

@@ -15,10 +15,10 @@ import axios from 'axios'
 import { SingleInvoiceType, InvoiceLayoutProps } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import PreviewCard from 'src/views/apps/invoice/preview/PreviewCard'
-import PreviewActions from 'src/views/apps/invoice/preview/PreviewActions'
-import AddPaymentDrawer from 'src/views/apps/invoice/shared-drawer/AddPaymentDrawer'
-import SendInvoiceDrawer from 'src/views/apps/invoice/shared-drawer/SendInvoiceDrawer'
+import PreviewCard from 'src/views/manage/orders/preview/PreviewCard'
+import PreviewActions from 'src/views/manage/orders/preview/PreviewActions'
+import AddPaymentDrawer from 'src/views/manage/orders/shared-drawer/AddPaymentDrawer'
+import SendInvoiceDrawer from 'src/views/manage/orders/shared-drawer/SendInvoiceDrawer'
 
 const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
   // ** State
@@ -29,7 +29,7 @@ const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
 
   useEffect(() => {
     axios
-      .get('/apps/invoice/single-invoice', { params: { id } })
+      .get('/manage/orders/single-invoice', { params: { id } })
       .then(res => {
         setData(res.data)
         setError(false)
@@ -68,7 +68,7 @@ const InvoicePreview = ({ id }: InvoiceLayoutProps) => {
         <Grid item xs={12}>
           <Alert severity='error'>
             Invoice with the id: {id} does not exist. Please check the list of invoices:{' '}
-            <Link href='/apps/invoice/list'>Invoice List</Link>
+            <Link href='/manage/orders/list'>Invoice List</Link>
           </Alert>
         </Grid>
       </Grid>
