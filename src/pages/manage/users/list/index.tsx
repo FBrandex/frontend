@@ -14,7 +14,6 @@ import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
@@ -61,13 +60,13 @@ interface UserStatusType {
 }
 
 // ** Vars
-const userRoleObj: UserRoleType = {
+/* const userRoleObj: UserRoleType = {
   admin: <Laptop sx={{ mr: 2, color: 'error.main' }} />,
   author: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
   editor: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
   maintainer: <ChartDonut sx={{ mr: 2, color: 'success.main' }} />,
   subscriber: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
-}
+} */
 
 interface CellType {
   row: UsersType
@@ -123,7 +122,7 @@ const MenuItemLink = styled('a')(({ theme }) => ({
   color: theme.palette.text.primary
 }))
 
-const RowOptions = ({ id }: { id: number | string }) => {
+/* const RowOptions = ({ id }: { id: number | string }) => {
   // ** Hooks
   const dispatch = useDispatch<AppDispatch>()
 
@@ -183,7 +182,7 @@ const RowOptions = ({ id }: { id: number | string }) => {
       </Menu>
     </>
   )
-}
+} */
 
 const columns = [
   {
@@ -257,6 +256,7 @@ const columns = [
       )
     }
   },
+
   /* {
     flex: 0.15,
     field: 'role',
@@ -286,6 +286,7 @@ const columns = [
       )
     }
   }, */
+
   {
     flex: 0.1,
     minWidth: 110,
@@ -303,6 +304,7 @@ const columns = [
       )
     }
   },
+
   /* {
     flex: 0.1,
     minWidth: 90,
@@ -311,6 +313,7 @@ const columns = [
     headerName: 'Ações',
     renderCell: ({ row }: CellType) => <RowOptions id={row.id} />
   } */
+  
 ]
 
 const UserList = () => {

@@ -12,8 +12,6 @@ import DropzoneWrapper from 'src/@core/styles/libs/react-dropzone'
 
 // ** Demo Components Imports
 import FileUploaderSingle from 'src/views/file-uploader/FileUploaderSingle'
-import FileUploaderMultiple from 'src/views/file-uploader/FileUploaderMultiple'
-import FileUploaderRestrictions from 'src/views/file-uploader/FileUploaderRestrictions'
 
 // ** Source code imports
 import * as source from 'src/views/file-uploader/FileUploaderSourceCode'
