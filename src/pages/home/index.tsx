@@ -7,20 +7,16 @@ import CardContent from '@mui/material/CardContent'
 
 const Home = () => {
   return (
-    <Grid container spacing={6}>
+    <Grid container spacing={2}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Kick start your project 🚀'></CardHeader>
+          <CardHeader title='Bem vindo, Administrador!'></CardHeader>
           <CardContent>
-            <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
-            <Typography>
-              Please make sure to read our Template Documentation to understand where to go from here and how to use our
-              template.
-            </Typography>
+            <Typography>Navegue entre as opções do menu.</Typography>
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         <Card>
           <CardHeader title='ACL and JWT 🔒'></CardHeader>
           <CardContent>
@@ -30,7 +26,7 @@ const Home = () => {
             <Typography>Please read our Authentication and ACL Documentations to get more out of them.</Typography>
           </CardContent>
         </Card>
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }
