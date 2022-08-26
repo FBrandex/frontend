@@ -33,10 +33,6 @@ const themeOptions = (settings: Settings): ThemeOptions => {
       palette: palette(mode, skin),
       typography: {
         fontFamily:
-          '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
-      },
-      /* typography: {
-        fontFamily:
           userFontFamily ||
           [
             'Inter',
@@ -52,12 +48,12 @@ const themeOptions = (settings: Settings): ThemeOptions => {
             '"Segoe UI Emoji"',
             '"Segoe UI Symbol"'
           ].join(',')
-      }, */
+      },
       shadows: shadows(mode),
       ...spacing,
       breakpoints: breakpoints(),
       shape: {
-        borderRadius: 4
+        borderRadius: 10
       },
       mixins: {
         toolbar: {

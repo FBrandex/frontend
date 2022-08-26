@@ -106,8 +106,8 @@ const schema = yup.object().shape({
 })
 
 const defaultValues = {
-  password: 'default123',
-  email: 'dev@xprop.com.br'
+  password: 'admin',
+  email: 'admin@materialize.com'
 }
 
 interface FormData {
@@ -144,7 +144,7 @@ const LoginPage = () => {
     auth.login({ email, password }, () => {
       setError('email', {
         type: 'manual',
-        message: 'Dados de acesso inválidos'
+        message: 'Email or Password is invalid'
       })
     })
   }
@@ -261,18 +261,15 @@ const LoginPage = () => {
               </Typography>
             </Box>
             <Box sx={{ mb: 6 }}>
-              <TypographyStyled variant='h5'>{`Bem-vindo à ${themeConfig.templateName}! 👋🏻`}</TypographyStyled>
-              <Typography variant='body2'>Faça o Login para continuar.</Typography>
+              <TypographyStyled variant='h5'>{`Welcome to ${themeConfig.templateName}! 👋🏻`}</TypographyStyled>
+              <Typography variant='body2'>Please sign-in to your account and start the adventure</Typography>
             </Box>
             <Alert icon={false} sx={{ py: 3, mb: 6, ...bgClasses.primaryLight, '& .MuiAlert-message': { p: 0 } }}>
               <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
-                Admin: <strong>dev@xprop.com.br</strong>
+                Admin: <strong>admin@materialize.com</strong> / Pass: <strong>admin</strong>
               </Typography>
-              <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
-                Client: <strong>clientepadrao@xproptrading.com</strong>
-              </Typography>
-              <Typography variant='caption' sx={{ mb: 2, display: 'block', color: 'primary.main' }}>
-                Pass: <strong>default123</strong>
+              <Typography variant='caption' sx={{ display: 'block', color: 'primary.main' }}>
+                Client: <strong>client@materialize.com</strong> / Pass: <strong>client</strong>
               </Typography>
             </Alert>
             <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
@@ -284,7 +281,7 @@ const LoginPage = () => {
                   render={({ field: { value, onChange, onBlur } }) => (
                     <TextField
                       autoFocus
-                      label='E-mail'
+                      label='Email'
                       value={value}
                       onBlur={onBlur}
                       onChange={onChange}
@@ -297,7 +294,7 @@ const LoginPage = () => {
               </FormControl>
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-login-v2-password' error={Boolean(errors.password)}>
-                  Senha
+                  Password
                 </InputLabel>
                 <Controller
                   name='password'
@@ -336,30 +333,30 @@ const LoginPage = () => {
                 sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
               >
                 <FormControlLabel
-                  label='Continuar Conectado'
+                  label='Remember Me'
                   control={<Checkbox />}
                   sx={{ '& .MuiFormControlLabel-label': { color: 'text.primary' } }}
                 />
                 <Link passHref href='/forgot-password'>
                   <Typography component={MuiLink} variant='body2' sx={{ color: 'primary.main' }}>
-                    Esqueci minha senha
+                    Forgot Password?
                   </Typography>
                 </Link>
               </Box>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
-                Entrar
+                Login
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography sx={{ mr: 2, color: 'text.secondary' }}>Ainda não tem cadastro?</Typography>
+                <Typography sx={{ mr: 2, color: 'text.secondary' }}>New on our platform?</Typography>
                 <Typography>
                   <Link passHref href='/register'>
                     <Typography component={MuiLink} sx={{ color: 'primary.main' }}>
-                      Criar uma conta
+                      Create an account
                     </Typography>
                   </Link>
                 </Typography>
               </Box>
-              <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>ou</Divider>
+              <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>or</Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Link href='/' passHref>
                   <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>

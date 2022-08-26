@@ -127,7 +127,7 @@ const Register = () => {
     password: yup.string().min(5).required(),
     username: yup.string().min(3).required(),
     email: yup.string().email().required(),
-    terms: yup.bool().oneOf([true], 'Você precisa aceitar os termos e a política de privacidade para continuar.')
+    terms: yup.bool().oneOf([true], 'You must accept the privacy policy & terms')
   })
 
   const {
@@ -271,8 +271,8 @@ const Register = () => {
               </Typography>
             </Box>
             <Box sx={{ mb: 6 }}>
-              <TypographyStyled variant='h5'>A aventura começa aqui 🚀</TypographyStyled>
-              <Typography variant='body2'>Cadastre-se!</Typography>
+              <TypographyStyled variant='h5'>Adventure starts here 🚀</TypographyStyled>
+              <Typography variant='body2'>Make your app management easy and fun!</Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={handleSubmit(onSubmit)}>
               <FormControl fullWidth sx={{ mb: 4 }}>
@@ -285,9 +285,9 @@ const Register = () => {
                       autoFocus
                       value={value}
                       onBlur={onBlur}
-                      label='Nome de usuário'
+                      label='Username'
                       onChange={onChange}
-                      placeholder='Usuário'
+                      placeholder='johndoe'
                       error={Boolean(errors.username)}
                     />
                   )}
@@ -304,11 +304,11 @@ const Register = () => {
                   render={({ field: { value, onChange, onBlur } }) => (
                     <TextField
                       value={value}
-                      label='E-mail'
+                      label='Email'
                       onBlur={onBlur}
                       onChange={onChange}
                       error={Boolean(errors.email)}
-                      placeholder='usuario@email.com'
+                      placeholder='user@email.com'
                     />
                   )}
                 />
@@ -316,7 +316,7 @@ const Register = () => {
               </FormControl>
               <FormControl fullWidth>
                 <InputLabel htmlFor='auth-login-v2-password' error={Boolean(errors.password)}>
-                  Senha
+                  Password
                 </InputLabel>
                 <Controller
                   name='password'
@@ -325,7 +325,7 @@ const Register = () => {
                   render={({ field: { value, onChange, onBlur } }) => (
                     <OutlinedInput
                       value={value}
-                      label='Senha'
+                      label='Password'
                       onBlur={onBlur}
                       onChange={onChange}
                       id='auth-login-v2-password'
@@ -376,7 +376,7 @@ const Register = () => {
                               component='span'
                               sx={{ color: errors.terms ? 'error.main' : '' }}
                             >
-                              Eu li e estou de acordo com os{' '}
+                              I agree to{' '}
                             </Typography>
                             <Link href='/' passHref>
                               <Typography
@@ -385,7 +385,7 @@ const Register = () => {
                                 sx={{ color: 'primary.main' }}
                                 onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}
                               >
-                                Termos & Política de Privacidade
+                                privacy policy & terms
                               </Typography>
                             </Link>
                           </Fragment>
@@ -399,19 +399,19 @@ const Register = () => {
                 )}
               </FormControl>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
-                Registrar
+                Sign up
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography sx={{ mr: 2, color: 'text.secondary' }}>Já tem uma conta?</Typography>
+                <Typography sx={{ mr: 2, color: 'text.secondary' }}>Already have an account?</Typography>
                 <Typography>
                   <Link passHref href='/login'>
                     <Typography component={MuiLink} sx={{ color: 'primary.main' }}>
-                      Fazer login
+                      Sign in instead
                     </Typography>
                   </Link>
                 </Typography>
               </Box>
-              <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>ou</Divider>
+              <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>or</Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Link href='/' passHref>
                   <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
