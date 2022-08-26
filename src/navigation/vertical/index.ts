@@ -5,7 +5,8 @@ import {
   Finance,
   HomeOutline,
   ShieldOutline,
-  ThumbsUpDownOutline
+  ThumbsUpDownOutline,
+  CogOutline
   
 } from 'mdi-material-ui'
 
@@ -63,19 +64,6 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'E-mails',
           path: '/manage/emails/list',
-        },
-        {
-          title: 'Permissões',
-          children: [
-            {
-              title: 'Funções',
-              path: '/manage/roles',
-            },
-            {
-              title: 'Atribuições',
-              path: '/manage/permissions',
-            },
-          ]
         },
       ]
     },
@@ -150,12 +138,26 @@ const navigation = (): VerticalNavItemsType => {
       ],
     },
     {
+      title: 'Permissões',
+      icon: CogOutline,
+      children: [
+        {
+          title: 'Funções',
+          path: '/settings/roles',
+        },
+        {
+          title: 'Atribuições',
+          path: '/settings/permissions',
+        },
+      ]
+    },
+    {
       title: 'Controle de Acesso',
       icon: ShieldOutline,
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-    }
+    },
   ]
 }
 
