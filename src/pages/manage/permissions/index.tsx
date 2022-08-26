@@ -33,7 +33,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import PageHeader from 'src/@core/components/page-header'
-import TableHeader from 'src/views/permissions/TableHeader'
+import TableHeader from 'src/views/manage/permissions/TableHeader'
 
 // ** Types Imports
 import { RootState, AppDispatch } from 'src/store'
