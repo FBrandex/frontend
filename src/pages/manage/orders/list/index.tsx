@@ -57,7 +57,7 @@ import { getInitials } from 'src/@core/utils/get-initials'
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
 import CustomAvatar from 'src/@core/components/mui/avatar'
-import TableHeader from 'src/views/orders/list/TableHeader'
+import TableHeader from 'src/views/manage/orders/list/TableHeader'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'

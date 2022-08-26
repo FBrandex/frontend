@@ -14,9 +14,9 @@ import axios from 'axios'
 import { InvoiceType, InvoiceClientType } from 'src/types/apps/invoiceTypes'
 
 // ** Demo Components Imports
-import AddCard from 'src/views/orders/add/AddCard'
-import AddActions from 'src/views/orders/add/AddActions'
-import AddNewCustomers from 'src/views/orders/add/AddNewCustomer'
+import AddCard from 'src/views/manage/orders/add/AddCard'
+import AddActions from 'src/views/manage/orders/add/AddActions'
+import AddNewCustomers from 'src/views/manage/orders/add/AddNewCustomer'
 
 // ** Third Party Styles Imports
 import 'react-datepicker/dist/react-datepicker.css'

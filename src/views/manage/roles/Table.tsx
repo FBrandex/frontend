@@ -41,7 +41,7 @@ import { UsersType } from 'src/types/apps/userTypes'
 import { ThemeColor } from 'src/@core/layouts/types'
 
 // ** Custom Components Imports
-import TableHeader from 'src/views/roles/TableHeader'
+import TableHeader from 'src/views/manage/roles/TableHeader'
 
 interface UserRoleType {
   [key: string]: ReactElement

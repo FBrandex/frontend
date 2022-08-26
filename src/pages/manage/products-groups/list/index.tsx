@@ -49,8 +49,8 @@ import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/apps/userTypes'
 
 // ** Custom Components Imports
-import TableHeader from 'src/views/products-groups/list/TableHeader'
-import AddUserDrawer from 'src/views/products-groups/list/AddGroupDrawer'
+import TableHeader from 'src/views/manage/products-groups/list/TableHeader'
+import AddUserDrawer from 'src/views/manage/products-groups/list/AddGroupDrawer'
 
 interface UserRoleType {
   [key: string]: ReactElement
