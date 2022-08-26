@@ -1,5 +1,8 @@
 // ** React Imports
-import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+
+/* import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react' */
+
+import { useState, useEffect, useCallback, ReactElement } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -7,12 +10,16 @@ import Link from 'next/link'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import Menu from '@mui/material/Menu'
+
+/* import Menu from '@mui/material/Menu' */
+
 import Grid from '@mui/material/Grid'
 import { DataGrid } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
-import IconButton from '@mui/material/IconButton'
+
+/* import IconButton from '@mui/material/IconButton' */
+
 import Typography from '@mui/material/Typography'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
@@ -20,14 +27,14 @@ import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-import Laptop from 'mdi-material-ui/Laptop'
+/* import Laptop from 'mdi-material-ui/Laptop'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+import AccountOutline from 'mdi-material-ui/AccountOutline' */
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -40,7 +47,8 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-import { fetchData, deleteUser } from 'src/store/apps/user'
+/* import { fetchData, deleteUser } from 'src/store/apps/user' */
+import { fetchData } from 'src/store/apps/user'
 
 // ** Types Imports
 import { RootState, AppDispatch } from 'src/store'
@@ -51,9 +59,9 @@ import { UsersType } from 'src/types/apps/userTypes'
 import TableHeader from 'src/views/manage/users/list/TableHeader'
 import AddUserDrawer from 'src/views/manage/users/list/AddUserDrawer'
 
-interface UserRoleType {
+/* interface UserRoleType {
   [key: string]: ReactElement
-}
+} */
 
 interface UserStatusType {
   [key: string]: ThemeColor
@@ -113,14 +121,14 @@ const renderClient = (row: UsersType) => {
 }
 
 // ** Styled component for the link inside menu
-const MenuItemLink = styled('a')(({ theme }) => ({
+/* const MenuItemLink = styled('a')(({ theme }) => ({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
   textDecoration: 'none',
   padding: theme.spacing(1.5, 4),
   color: theme.palette.text.primary
-}))
+})) */
 
 /* const RowOptions = ({ id }: { id: number | string }) => {
   // ** Hooks
