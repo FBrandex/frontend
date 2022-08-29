@@ -12,10 +12,10 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     if (skin === 'bordered' && mode === 'light') {
       return '#FFF'
     } else if (skin === 'bordered' && mode === 'dark') {
-      return '#30334E'
+      return '#152937'
     } else if (mode === 'light') {
       return '#F7F7F9'
-    } else return '#282A42'
+    } else return '#0e1b25'
   }
 
   return {
@@ -23,9 +23,9 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
       dark: darkColor,
       main: mainColor,
       light: lightColor,
-      darkBg: '#282A42',
+      darkBg: '#0e1b25',
       lightBg: '#F7F7F9',
-      bodyBg: mode === 'light' ? '#F7F7F9' : '#282A42', // Same as palette.background.default but doesn't consider bordered skin
+      bodyBg: mode === 'light' ? '#F7F7F9' : '#0e1b25', // Same as palette.background.default but doesn't consider bordered skin
       tooltipBg: mode === 'light' ? '#262732' : '#464A65',
       tableHeaderBg: mode === 'light' ? '#F5F5F7' : '#3A3E5B'
     },
@@ -93,7 +93,7 @@ const DefaultPalette = (mode: PaletteMode, skin: Skin) => {
     },
     divider: `rgba(${mainColor}, 0.12)`,
     background: {
-      paper: mode === 'light' ? '#FFF' : '#30334E',
+      paper: mode === 'light' ? '#FFF' : '#152937',
       default: defaultBgColor()
     },
     action: {
