@@ -1,6 +1,5 @@
 // ** React Imports
-/* import { Fragment, SyntheticEvent, useEffect, useState } from 'react' */
-import { Fragment, SyntheticEvent, useState } from 'react'
+import { Fragment, SyntheticEvent, useEffect, useState } from 'react'
 
 // ** MUI Imports
 import Menu from '@mui/material/Menu'
@@ -31,7 +30,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
   // ** Vars
   const { direction } = settings
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (i18n.language === 'ar' && direction === 'ltr') {
       saveSettings({ ...settings, direction: 'ltr' })
     } else if (i18n.language === 'ar' || direction === 'rtl') {
@@ -40,7 +39,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
       saveSettings({ ...settings, direction: 'ltr' })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [i18n.language, direction]) */
+  }, [i18n.language, direction])
 
   const handleLangDropdownOpen = (event: SyntheticEvent) => {
     setAnchorEl(event.currentTarget)
@@ -50,7 +49,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
     setAnchorEl(null)
   }
 
-  const handleLangItemClick = (lang: 'en' | 'ptbr') => {
+  const handleLangItemClick = (lang: 'en' | 'fr' | 'ar') => {
     i18n.changeLanguage(lang)
     handleLangDropdownClose()
   }
@@ -70,16 +69,6 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
       >
         <MenuItem
           sx={{ py: 2 }}
-          selected={i18n.language === 'ptbr'}
-          onClick={() => {
-            handleLangItemClick('ptbr')
-            saveSettings({ ...settings, direction: 'ltr' })
-          }}
-        >
-          Português BR
-        </MenuItem>
-        <MenuItem
-          sx={{ py: 2 }}
           selected={i18n.language === 'en'}
           onClick={() => {
             handleLangItemClick('en')
@@ -88,7 +77,17 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
         >
           English
         </MenuItem>
-        {/* <MenuItem
+        <MenuItem
+          sx={{ py: 2 }}
+          selected={i18n.language === 'fr'}
+          onClick={() => {
+            handleLangItemClick('fr')
+            saveSettings({ ...settings, direction: 'ltr' })
+          }}
+        >
+          French
+        </MenuItem>
+        <MenuItem
           sx={{ py: 2 }}
           selected={i18n.language === 'ar'}
           onClick={() => {
@@ -97,7 +96,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
           }}
         >
           Arabic
-        </MenuItem> */}
+        </MenuItem>
       </Menu>
     </Fragment>
   )
