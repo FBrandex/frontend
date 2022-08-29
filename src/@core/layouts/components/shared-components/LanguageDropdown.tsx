@@ -76,7 +76,7 @@ const LanguageDropdown = ({ settings, saveSettings }: Props) => {
             saveSettings({ ...settings, direction: 'ltr' })
           }}
         >
-          Português do Brasil
+          Português BR
         </MenuItem>
         <MenuItem
           sx={{ py: 2 }}
