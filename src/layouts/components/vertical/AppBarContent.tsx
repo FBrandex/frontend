@@ -7,11 +7,12 @@ import MenuIcon from 'mdi-material-ui/Menu'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
+import UserLanguageDropdown from 'src/layouts/components/UserLanguageDropdown'
 
 // ** Components
 import ModeToggler from 'src/@core/layouts/components/shared-components/ModeToggler'
 import UserDropdown from 'src/layouts/components/UserDropdown'
-import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown'
+/* import LanguageDropdown from 'src/@core/layouts/components/shared-components/LanguageDropdown' */
 import NotificationDropdown from 'src/@core/layouts/components/shared-components/NotificationDropdown'
 
 interface Props {
@@ -36,7 +37,7 @@ const AppBarContent = (props: Props) => {
 
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
-        <LanguageDropdown settings={settings} saveSettings={saveSettings} />
+        <UserLanguageDropdown settings={settings} />
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         <NotificationDropdown settings={settings} />
         <UserDropdown settings={settings} />
