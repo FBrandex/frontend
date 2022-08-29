@@ -21,19 +21,19 @@ const navigation = (): VerticalNavItemsType => {
       path: '/home'
     },
     {
-      title: 'Cadastros',
+      title: 'Manage',
       icon: DatabaseEditOutline,
       children: [
         {
-          title: 'Vendas',
+          title: 'Orders',
           path: '/manage/orders/list',
         },
         {
-          title: 'Usuários',
+          title: 'Users',
           path: '/manage/users/list',
         },
         {
-          title: 'Corretoras',
+          title: 'Brokers',
           path: '/manage/brokers/list',
         },
         /* {
@@ -41,11 +41,11 @@ const navigation = (): VerticalNavItemsType => {
           path: '/manage/sub-account',
         }, */
         {
-          title: 'Categorias de Produto',
+          title: 'Category',
           path: '/manage/products-groups/list',
         },
         {
-          title: 'Produtos',
+          title: 'Products',
           path: '/manage/products/list',
         },
         {
@@ -56,79 +56,79 @@ const navigation = (): VerticalNavItemsType => {
               path: '/manage/imports/performance',
             },
             {
-              title: 'Plataforma',
+              title: 'Platform',
               path: '#',
             },
           ]
         },
         {
-          title: 'E-mails',
+          title: 'Emails',
           path: '/manage/emails/list',
         },
       ]
     },
     {
-      title: 'Desafios',
+      title: 'Evaluations',
       icon: ThumbsUpDownOutline,
       children: [
         {
-          title: 'Habilitar',
+          title: 'Enable',
           path: '/test-account/enable',
         },
         {
-          title: 'Desabilitar',
+          title: 'Disable',
           path: '/test-account/disable',
         },
         {
-          title: 'Resetar',
+          title: 'Reset',
           path: '/test-account/reset',
         },
         {
-          title: 'Reinicar',
+          title: 'Restart',
           path: '/test-account/restart',
         },
         {
-          title: 'Gestão de Performance',
+          title: 'Performance Management',
           path: '/test-account/performance',
         },
         {
-          title: 'Meta Atingida',
+          title: 'Achieved Goal',
           path: '/test-account/approved',
         },
         {
-          title: 'Expirados',
+          title: 'Expired',
           path: '/test-account/expired',
         },
       ]
     },
     {
-      title: 'Conta Real',
+      title: 'Real Account',
       icon: Finance,
       children: [
         {
-          title: 'Entrevista',
+          title: 'Interview',
           path: '/real-account/interview',
         },
         {
-          title: 'Habilitar',
+          title: 'Enable',
           path: '/real-account/enable',
         },
         {
-          title: 'Desabilitar',
+          title: 'Disable',
           path: '/real-account/disable',
         },
         {
-          title: 'Histórico de Evidência',
+          title: 'Evidence History',
           path: '/real-account/evidence'
         },
         {
-          title: 'Gestão de Performance',
+          title: 'Performance Management',
           path: '/real-account/performance'
         },
       ]
     },
     {
-      title: 'Financeiro',
+      title: 'Finacial',
       icon: CurrencyUsd,
       children: [
         {
@@ -138,7 +138,7 @@ const navigation = (): VerticalNavItemsType => {
       ],
     },
     {
-      title: 'Configurações',
+      title: 'Settings',
       icon: CogOutline,
       children: [
         {
@@ -157,7 +157,7 @@ const navigation = (): VerticalNavItemsType => {
       ],
     },
     {
-      title: 'Controle de Acesso',
+      title: 'Access Control',
       icon: ShieldOutline,
       path: '/acl',
       action: 'read',
