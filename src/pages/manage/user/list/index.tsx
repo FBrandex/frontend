@@ -2,7 +2,8 @@
 
 /* import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react' */
 
-import { useState, useEffect, useCallback } from 'react'
+/* import { useState, useEffect, useCallback } from 'react' */
+import { useState, useCallback } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -48,7 +49,6 @@ import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
 /* import { fetchData, deleteUser } from 'src/store/manage/user' */
-import { fetchData } from 'src/store/manage/user'
 
 // ** Types Imports
 import { RootState, AppDispatch } from 'src/store'
@@ -327,17 +327,17 @@ const columns = [
 const UserList = () => {
   // ** State
   const [role, setRole] = useState<string>('')
-  const [plan, setPlan] = useState<string>('')
+  /* const [plan, setPlan] = useState<string>('') */
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
   const [pageSize, setPageSize] = useState<number>(10)
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
 
   // ** Hooks
-  const dispatch = useDispatch<AppDispatch>()
+  /* const dispatch = useDispatch<AppDispatch>() */
   const store = useSelector((state: RootState) => state.user)
 
-  useEffect(() => {
+  /* useEffect(() => {
     dispatch(
       fetchData({
         role,
@@ -346,7 +346,7 @@ const UserList = () => {
         currentPlan: plan
       })
     )
-  }, [dispatch, plan, role, status, value])
+  }, [dispatch, plan, role, status, value]) */
 
   const handleFilter = useCallback((val: string) => {
     setValue(val)
@@ -356,9 +356,9 @@ const UserList = () => {
     setRole(e.target.value)
   }, [])
 
-  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
+  /* const handlePlanChange = useCallback((e: SelectChangeEvent) => {
     setPlan(e.target.value)
-  }, [])
+  }, []) */
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
     setStatus(e.target.value)
