@@ -329,6 +329,7 @@ const columns = [
 const UserList = () => {
   // ** State
   const [role, setRole] = useState<string>('')
+  
   /* const [plan, setPlan] = useState<string>('') */
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
