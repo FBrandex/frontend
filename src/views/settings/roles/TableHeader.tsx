@@ -30,7 +30,7 @@ const TableHeader = (props: TableHeaderProps) => {
         <TextField
           size='small'
           value={value}
-          placeholder='Search User'
+          placeholder='Buscar'
           sx={{ mr: 6, mb: 2 }}
           onChange={e => handleFilter(e.target.value)}
         />

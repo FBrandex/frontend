@@ -13,6 +13,7 @@ import {
 // ** Type import
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
+// ** Menu vertical
 const navigation = (): VerticalNavItemsType => {
   return [
     {
@@ -71,6 +72,10 @@ const navigation = (): VerticalNavItemsType => {
       title: 'Evaluations',
       icon: ThumbsUpDownOutline,
       children: [
+        {
+          title: 'List',
+          path: '/test-account/list',
+        },
         {
           title: 'Enable',
           path: '/test-account/enable',
