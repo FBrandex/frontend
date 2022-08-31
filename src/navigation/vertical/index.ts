@@ -27,15 +27,15 @@ const navigation = (): VerticalNavItemsType => {
       children: [
         {
           title: 'Orders',
-          path: '/manage/orders/list',
+          path: '/manage/order/list',
         },
         {
           title: 'Users',
-          path: '/manage/users/list',
+          path: '/manage/user/list',
         },
         {
           title: 'Brokers',
-          path: '/manage/brokers/list',
+          path: '/manage/broker/list',
         },
         /* {
           title: 'Subconta',
@@ -43,18 +43,18 @@ const navigation = (): VerticalNavItemsType => {
         }, */
         {
           title: 'Category',
-          path: '/manage/products-groups/list',
+          path: '/manage/product-group/list',
         },
         {
           title: 'Products',
-          path: '/manage/products/list',
+          path: '/manage/product/list',
         },
         {
           title: 'Imports',
           children: [
             {
               title: 'Performance',
-              path: '/manage/imports/performance',
+              path: '/manage/import/performance',
             },
             {
               title: 'Platform',
@@ -64,7 +64,7 @@ const navigation = (): VerticalNavItemsType => {
         },
         {
           title: 'Emails',
-          path: '/manage/emails/list',
+          path: '/manage/email/list',
         },
       ]
     },

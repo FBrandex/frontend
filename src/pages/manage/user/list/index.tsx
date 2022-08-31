@@ -47,17 +47,17 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-/* import { fetchData, deleteUser } from 'src/store/apps/user' */
-import { fetchData } from 'src/store/apps/user'
+/* import { fetchData, deleteUser } from 'src/store/manage/user' */
+import { fetchData } from 'src/store/manage/user'
 
 // ** Types Imports
 import { RootState, AppDispatch } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
-import { UsersType } from 'src/types/apps/userTypes'
+import { UsersType } from 'src/types/manage/userTypes'
 
 // ** Custom Components Imports
-import TableHeader from 'src/views/manage/users/list/TableHeader'
-import AddUserDrawer from 'src/views/manage/users/list/AddUserDrawer'
+import TableHeader from 'src/views/manage/user/list/TableHeader'
+import AddUserDrawer from 'src/views/manage/user/list/AddUserDrawer'
 
 /* interface UserRoleType {
   [key: string]: ReactElement
@@ -388,7 +388,7 @@ const UserList = () => {
                     <MenuItem value=''>Todos</MenuItem>
                     <MenuItem value='admin'>Super Admin</MenuItem>
                     <MenuItem value='real account admin'>Admin Conta Real</MenuItem>
-                    <MenuItem value='test account manager'>Admin Desafio</MenuItem>
+                    <MenuItem value='test account admin'>Admin Desafio</MenuItem>
                     <MenuItem value='client'>Cliente</MenuItem>
                     <MenuItem value='support'>Suporte</MenuItem>
                     <MenuItem value='financial'>Financeiro</MenuItem>

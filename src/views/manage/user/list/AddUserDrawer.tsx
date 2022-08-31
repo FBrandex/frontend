@@ -26,7 +26,7 @@ import Close from 'mdi-material-ui/Close'
 import { useDispatch } from 'react-redux'
 
 // ** Actions Imports
-import { addUser } from 'src/store/apps/user'
+import { addUser } from 'src/store/manage/user'
 
 // ** Types Imports
 import { AppDispatch } from 'src/store'
@@ -460,7 +460,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
             >
               <MenuItem value='admin'>Super Admin</MenuItem>
               <MenuItem value='real account admin'>Admin Conta Real</MenuItem>
-              <MenuItem value='test account manager'>Admin Desafio</MenuItem>
+              <MenuItem value='test account admin'>Admin Desafio</MenuItem>
               <MenuItem value='client'>Cliente</MenuItem>
               <MenuItem value='support'>Suporte</MenuItem>
               <MenuItem value='financial'>Financeiro</MenuItem>
