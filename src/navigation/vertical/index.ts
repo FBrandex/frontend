@@ -58,7 +58,7 @@ const navigation = (): VerticalNavItemsType => {
             },
             {
               title: 'Platform',
-              path: 'manage/import/platform',
+              path: '/manage/import/platform',
             },
           ]
         },
@@ -151,11 +151,11 @@ const navigation = (): VerticalNavItemsType => {
           children: [
             {
               title: 'Funções',
-              path: '/settings/roles',
+              path: '/settings/role',
             },
             {
               title: 'Atribuições',
-              path: '/settings/permissions',
+              path: '/settings/permission',
             },
           ]
         },
