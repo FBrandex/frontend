@@ -5,12 +5,12 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next/types'
 import axios from 'axios'
 
 // ** Types
-import { InvoiceType } from 'src/types/apps/invoiceTypes'
+/* import { InvoiceType } from 'src/types/apps/invoiceTypes' */
 
 // ** Demo Components Imports
-import UserViewPage from 'src/views/manage/users/view/UserViewPage'
+/* import UserViewPage from 'src/views/manage/users/view/UserViewPage' */
 
-const UserView = ({ invoiceData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+/* const UserView = ({ invoiceData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <UserViewPage id='1' invoiceData={invoiceData} />
 }
 
@@ -25,4 +25,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default UserView
+export default UserView */
