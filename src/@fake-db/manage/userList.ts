@@ -111,7 +111,7 @@ const data: { users: UsersType[] } = {
 }
 
 // POST: Add new user
-mock.onPost('/apps/users/add-user').reply(config => {
+mock.onPost('/manage/user/add-user').reply(config => {
   // Get event from post data
   const user = JSON.parse(config.data).data
 
@@ -128,7 +128,7 @@ mock.onPost('/apps/users/add-user').reply(config => {
 })
 
 // GET: Updated DATA
-mock.onGet('/apps/users/list').reply(config => {
+mock.onGet('/manage/user/list').reply(config => {
   const { q = '', role = null, status = null, currentPlan = null } = config.params ?? ''
 
   const queryLowered = q.toLowerCase()
@@ -158,7 +158,7 @@ mock.onGet('/apps/users/list').reply(config => {
 })
 
 // GET: particular user data
-mock.onGet('/apps/user').reply(config => {
+mock.onGet('/manage/user').reply(config => {
   const { id } = config.params
 
   const userData = data.users.filter(user => user.id === parseInt(id, 10))
@@ -171,7 +171,7 @@ mock.onGet('/apps/user').reply(config => {
 })
 
 // DELETE: Deletes User
-mock.onDelete('/apps/users/delete').reply(config => {
+mock.onDelete('/manage/user/delete').reply(config => {
   // Get user id from URL
   const userId = config.data
 

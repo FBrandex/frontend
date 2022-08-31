@@ -77,14 +77,14 @@ const searchData: AppBarSearchType[] = [
   },
   {
     id: 11,
-    url: '/apps/user/list',
+    url: '/manage/user/list',
     icon: 'FormatListNumbered',
     title: 'User List',
     category: 'appsPages'
   },
   {
     id: 12,
-    url: '/apps/user/view',
+    url: '/manage/user/view',
     icon: 'AccountOutline',
     title: 'User View',
     category: 'appsPages'

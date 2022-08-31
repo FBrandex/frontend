@@ -37,7 +37,7 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 
 // ** Types
 import { ThemeColor } from 'src/@core/layouts/types'
-import { UsersType } from 'src/types/apps/userTypes'
+import { UsersType } from 'src/types/manage/userTypes'
 
 // ** Utils Import
 import { getInitials } from 'src/@core/utils/get-initials'

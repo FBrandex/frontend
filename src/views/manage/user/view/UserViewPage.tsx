@@ -12,25 +12,25 @@ import Alert from '@mui/material/Alert'
 import axios from 'axios'
 
 // ** Types
-import { InvoiceType } from 'src/types/apps/invoiceTypes'
-import { UserLayoutType, UsersType } from 'src/types/apps/userTypes'
+/* import { InvoiceType } from 'src/types/apps/invoiceTypes' */
+import { UserLayoutType, UsersType } from 'src/types/manage/userTypes'
 
 // ** Demo Components Imports
-import UserViewLeft from 'src/views/manage/users/view/UserViewLeft'
-import UserViewRight from 'src/views/manage/users/view/UserViewRight'
+import UserViewLeft from 'src/views/manage/user/view/UserViewLeft'
+import UserViewRight from 'src/views/manage/user/view/UserViewRight'
 
-type Props = UserLayoutType & {
+/* type Props = UserLayoutType & {
   invoiceData: InvoiceType[]
-}
+} */
 
-const UserView = ({ id, invoiceData }: Props) => {
+/* const UserView = ({ id, invoiceData }: Props) => {
   // ** State
   const [error, setError] = useState<boolean>(false)
   const [data, setData] = useState<null | UsersType>(null)
 
   useEffect(() => {
     axios
-      .get('/apps/user', { params: { id } })
+      .get('/manage/user', { params: { id } })
       .then(response => {
         setData(response.data)
         setError(false)
@@ -68,4 +68,4 @@ const UserView = ({ id, invoiceData }: Props) => {
   }
 }
 
-export default UserView
+export default UserView */
