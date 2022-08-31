@@ -58,7 +58,7 @@ const navigation = (): VerticalNavItemsType => {
             },
             {
               title: 'Platform',
-              path: '#',
+              path: 'manage/import/platform',
             },
           ]
         },

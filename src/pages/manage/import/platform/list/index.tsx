@@ -10,7 +10,7 @@ const EnableTest = () => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='IMPORT CSV PROFIT'></CardHeader>
+          <CardHeader title='IMPORT PLATAFORMA ATIVA'></CardHeader>
           <CardContent>
             <Typography>
               Em construção.
