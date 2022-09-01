@@ -278,7 +278,7 @@ const VerticalNavGroup = (props: Props) => {
             sx={{
               py: 2.25,
               width: '100%',
-              borderRadius: '8px',
+              borderRadius: '4px',
               ...conditionalBgColor(),
               transition: 'padding-left .25s ease-in-out',
               pr: navCollapsed && !navHover ? (collapsedNavWidth - navigationBorderWidth - 24 - 16) / 8 : 3,
@@ -291,14 +291,16 @@ const VerticalNavGroup = (props: Props) => {
                   ...conditionalIconColor(),
                   transition: 'margin .25s ease-in-out',
                   ...(parent && navCollapsed && !navHover ? {} : { mr: 2 }),
-                  ...(navCollapsed && !navHover ? { mr: 0 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper styling
+                  ...(navCollapsed && !navHover ? { mr: 0 , ml: 1 } : {}), // this condition should come after (parent && navCollapsed && !navHover) condition for proper styling
                   ...(parent && item.children ? { ml: 2, mr: 4 } : {})
                 }}
               >
                 <UserIcon
                   icon={IconTag}
                   componentType='vertical-menu'
-                  iconProps={{ sx: { ...(parent ? { fontSize: '0.5rem' } : {}) } }}
+                  iconProps={{ 
+                    sx: { 
+                      ...(!parent ? { fontSize: '1.3rem' } : { fontSize: '0.4rem' }) } }}
                 />
               </ListItemIcon>
             )}

@@ -28,6 +28,7 @@ import CanViewNavLink from 'src/layouts/components/acl/CanViewNavLink'
 
 // ** Utils
 import { handleURLQueries } from 'src/@core/layouts/utils'
+import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 
 interface Props {
   parent?: boolean
@@ -40,7 +41,7 @@ interface Props {
   toggleNavVisibility: () => void
   isSubToSub?: NavGroup | undefined
 }
-
+// ** Botão menu vertical
 // ** Styled Components
 const MenuNavLink = styled(ListItemButton)<
   ListItemButtonProps & { component?: ElementType; target?: '_blank' | undefined }
@@ -50,10 +51,9 @@ const MenuNavLink = styled(ListItemButton)<
   transition: 'padding-left .25s ease-in-out',
   '&.active': {
     '&, &:hover': {
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: hexToRGBA('#103c4c', 0.7)
     },
     '& .MuiTypography-root': {
-      fontWeight: 500,
       color: `${theme.palette.common.white} !important`
     },
     '& .MuiListItemIcon-root': {
@@ -169,7 +169,7 @@ const VerticalNavLink = ({
                 sx={{
                   ...conditionalIconColor(),
                   transition: 'margin .25s ease-in-out',
-                  ...(navCollapsed && !navHover ? { mr: 0 } : { mr: 2 }),
+                  ...(navCollapsed && !navHover ? { mr: 4, ml: 1 } : { mr: 2 }),
                   ...(parent ? { ml: 2, mr: 4 } : {}) // This line should be after (navCollapsed && !navHover) condition for proper styling
                 }}
               >
@@ -178,7 +178,7 @@ const VerticalNavLink = ({
                   componentType='vertical-menu'
                   iconProps={{
                     sx: {
-                      ...(!parent ? { fontSize: '1.5rem' } : { fontSize: '0.5rem' }),
+                      ...(!parent ? { fontSize: '1.3rem' } : { fontSize: '0.4rem' }),
                       ...(parent && item.icon ? { fontSize: '0.875rem' } : {})
                     }
                   }}
