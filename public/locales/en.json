@@ -17,8 +17,6 @@
   "User": "User",
   "View": "View",
   "Roles & Permissions": "Roles & Permissions",
-  "Roles": "Roles",
-  "Permissions": "Permissions",
   "Pages": "Pages",
   "Authentication": "Authentication",
   "Login": "Login",
@@ -124,11 +122,15 @@
   "Restart": "Restart",
   "Performance Management": "Performance Management",
   "Achieved Goal": "Achieved Goal",
-  "Expired": "ExpiExpiredrados",
+  "Expired": "Expired",
   "Real Account": "Real Account",
   "Interview": "Interview",
   "Evidence History": "Evidence History",
-  "Finacial": "Finacial",
+  "Financial": "Financial",
   "Access Control": "Access Control",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "Assignments": "Assignments",
+  "Roles": "Roles",
+  "Permissions": "Permissions",
+  "Transfers": "Transfers"
 }

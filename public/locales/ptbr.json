@@ -17,8 +17,6 @@
   "User": "User",
   "View": "View",
   "Roles & Permissions": "Roles & Permissions",
-  "Roles": "Roles",
-  "Permissions": "Permissions",
   "Pages": "Pages",
   "Authentication": "Authentication",
   "Login": "Login",
@@ -128,7 +126,11 @@
   "Real Account": "Conta Real",
   "Interview": "Entrevista",
   "Evidence History": "Histórico de Evidência",
-  "Finacial": "Financeiro",
+  "Financial": "Financeiro",
   "Access Control": "Controle de Acesso",
-  "Settings": "Configurações"
+  "Settings": "Configurações",
+  "Assignments": "Atribuições",
+  "Roles": "Funções",
+  "Permissions": "Permissões",
+  "Transfers": "Repasses"
 }

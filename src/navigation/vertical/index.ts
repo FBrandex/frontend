@@ -133,12 +133,12 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      title: 'Finacial',
+      title: 'Financial',
       icon: CurrencyUsd,
       children: [
         {
-          title: 'Repasses',
-          path: '/finance/transfers',
+          title: 'Transfers',
+          path: '/finance/transfer',
         },
       ],
     },
@@ -147,14 +147,14 @@ const navigation = (): VerticalNavItemsType => {
       icon: CogOutline,
       children: [
         {
-          title: 'Permissões',
+          title: 'Permissions',
           children: [
             {
-              title: 'Funções',
+              title: 'Roles',
               path: '/settings/role',
             },
             {
-              title: 'Atribuições',
+              title: 'Assignments',
               path: '/settings/permission',
             },
           ]
