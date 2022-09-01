@@ -5,11 +5,13 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import user from 'src/store/manage/user'
 import order from 'src/store/manage/order'
+import permissions from 'src/store/setting/permissions'
 
 export const store = configureStore({
   reducer: {
     user,
-    order
+    order,
+	permissions
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

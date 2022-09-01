@@ -2,6 +2,7 @@ html,
 body {
   min-height: 100%;
   font-size: 90%;
+
 }
 
 #__next {
@@ -22,4 +23,22 @@ code:not([class*='language-']):after {
 }
 code[class*='language-'] {
   padding: 0;
+}
+
+/* Barra de rolagem personalizada*/
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #3b62706e;
+}
+.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.MuiDataGrid-virtualScroller::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #3b62706e;
 }

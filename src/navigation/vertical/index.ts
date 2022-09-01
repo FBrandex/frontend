@@ -151,11 +151,11 @@ const navigation = (): VerticalNavItemsType => {
           children: [
             {
               title: 'Roles',
-              path: '/settings/role',
+              path: '/setting/roles',
             },
             {
               title: 'Assignments',
-              path: '/settings/permission',
+              path: '/setting/permissions',
             },
           ]
         },
