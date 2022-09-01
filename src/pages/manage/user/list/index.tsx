@@ -1,9 +1,5 @@
 // ** React Imports
-
-/* import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react' */
-
-/* import { useState, useEffect, useCallback } from 'react' */
-import { useState, useCallback } from 'react'
+import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -11,35 +7,31 @@ import Link from 'next/link'
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-
-/* import Menu from '@mui/material/Menu' */
-
+import Menu from '@mui/material/Menu'
 import Grid from '@mui/material/Grid'
 import { DataGrid } from '@mui/x-data-grid'
 import MenuItem from '@mui/material/MenuItem'
 import { styled } from '@mui/material/styles'
-
-/* import IconButton from '@mui/material/IconButton' */
-
+import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
+import CardHeader from '@mui/material/CardHeader'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-/* import Laptop from 'mdi-material-ui/Laptop'
+import Laptop from 'mdi-material-ui/Laptop'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline' */
+import AccountOutline from 'mdi-material-ui/AccountOutline'
 
 // ** Store Imports
-/* import { useDispatch, useSelector } from 'react-redux' */
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 // ** Custom Components Imports
 import CustomChip from 'src/@core/components/mui/chip'
@@ -49,11 +41,10 @@ import CustomAvatar from 'src/@core/components/mui/avatar'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 // ** Actions Imports
-/* import { fetchData, deleteUser } from 'src/store/manage/user' */
+import { fetchData, deleteUser } from 'src/store/manage/user'
 
 // ** Types Imports
-/* import { RootState, AppDispatch } from 'src/store' */
-import { RootState } from 'src/store'
+import { RootState, AppDispatch } from 'src/store'
 import { ThemeColor } from 'src/@core/layouts/types'
 import { UsersType } from 'src/types/manage/userTypes'
 
@@ -61,22 +52,22 @@ import { UsersType } from 'src/types/manage/userTypes'
 import TableHeader from 'src/views/manage/user/list/TableHeader'
 import AddUserDrawer from 'src/views/manage/user/list/AddUserDrawer'
 
-/* interface UserRoleType {
+interface UserRoleType {
   [key: string]: ReactElement
-} */
+}
 
 interface UserStatusType {
   [key: string]: ThemeColor
 }
 
 // ** Vars
-/* const userRoleObj: UserRoleType = {
+const userRoleObj: UserRoleType = {
   admin: <Laptop sx={{ mr: 2, color: 'error.main' }} />,
   author: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
   editor: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
   maintainer: <ChartDonut sx={{ mr: 2, color: 'success.main' }} />,
   subscriber: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
-} */
+}
 
 interface CellType {
   row: UsersType
@@ -103,13 +94,13 @@ const AvatarWithoutImageLink = styled(Link)(({ theme }) => ({
 const renderClient = (row: UsersType) => {
   if (row.avatar.length) {
     return (
-      <AvatarWithImageLink href={`/manage/users/view/${row.id}`}>
+      <AvatarWithImageLink href={`/manage/user/view/${row.id}`}>
         <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 34, height: 34 }} />
       </AvatarWithImageLink>
     )
   } else {
     return (
-      <AvatarWithoutImageLink href={`/manage/users/view/${row.id}`}>
+      <AvatarWithoutImageLink href={`/manage/user/view/${row.id}`}>
         <CustomAvatar
           skin='light'
           color={row.avatarColor || 'primary'}
@@ -123,16 +114,16 @@ const renderClient = (row: UsersType) => {
 }
 
 // ** Styled component for the link inside menu
-/* const MenuItemLink = styled('a')(({ theme }) => ({
+const MenuItemLink = styled('a')(({ theme }) => ({
   width: '100%',
   display: 'flex',
   alignItems: 'center',
   textDecoration: 'none',
   padding: theme.spacing(1.5, 4),
   color: theme.palette.text.primary
-})) */
+}))
 
-/* const RowOptions = ({ id }: { id: number | string }) => {
+const RowOptions = ({ id }: { id: number | string }) => {
   // ** Hooks
   const dispatch = useDispatch<AppDispatch>()
 
@@ -174,7 +165,7 @@ const renderClient = (row: UsersType) => {
         PaperProps={{ style: { minWidth: '8rem' } }}
       >
         <MenuItem sx={{ p: 0 }}>
-          <Link href={`/manage/users/view/${id}`} passHref>
+          <Link href={`/manage/user/view/${id}`} passHref>
             <MenuItemLink>
               <EyeOutline fontSize='small' sx={{ mr: 2 }} />
               View
@@ -192,35 +183,22 @@ const renderClient = (row: UsersType) => {
       </Menu>
     </>
   )
-} */
+}
 
 const columns = [
-  {
-    flex: 0.1,
-    maxWidth: 65,
-    field: 'id',
-    headerName: 'ID',
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Typography noWrap variant='body2'>
-          {row.id}
-        </Typography>
-      )
-    }
-  },
   {
     flex: 0.2,
     minWidth: 230,
     field: 'fullName',
-    headerName: 'Nome',
+    headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { id, fullName, role } = row
+      const { id, fullName, username } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <Link href={`/manage/users/view/${id}`} passHref>
+            <Link href={`/manage/user/view/${id}`} passHref>
               <Typography
                 noWrap
                 component='a'
@@ -230,9 +208,9 @@ const columns = [
                 {fullName}
               </Typography>
             </Link>
-            <Link href={`/manage/users/view/${id}`} passHref>
+            <Link href={`/manage/user/view/${id}`} passHref>
               <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-                {role}
+                @{username}
               </Typography>
             </Link>
           </Box>
@@ -254,24 +232,10 @@ const columns = [
     }
   },
   {
-    flex: 0.1,
-    minWidth: 110,
-    field: 'taxid',
-    headerName: 'Documento',
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Typography noWrap variant='body2'>
-          {row.taxid}
-        </Typography>
-      )
-    }
-  },
-
-  /* {
     flex: 0.15,
     field: 'role',
     minWidth: 150,
-    headerName: 'Função',
+    headerName: 'Role',
     renderCell: ({ row }: CellType) => {
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -286,7 +250,7 @@ const columns = [
   {
     flex: 0.15,
     minWidth: 120,
-    headerName: 'Plano',
+    headerName: 'Plan',
     field: 'currentPlan',
     renderCell: ({ row }: CellType) => {
       return (
@@ -295,8 +259,7 @@ const columns = [
         </Typography>
       )
     }
-  }, */
-
+  },
   {
     flex: 0.1,
     minWidth: 110,
@@ -314,33 +277,30 @@ const columns = [
       )
     }
   },
-
-  /* {
+  {
     flex: 0.1,
     minWidth: 90,
     sortable: false,
     field: 'actions',
-    headerName: 'Ações',
+    headerName: 'Actions',
     renderCell: ({ row }: CellType) => <RowOptions id={row.id} />
-  } */
-  
+  }
 ]
 
 const UserList = () => {
   // ** State
   const [role, setRole] = useState<string>('')
-  
-  /* const [plan, setPlan] = useState<string>('') */
+  const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
   const [pageSize, setPageSize] = useState<number>(10)
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
 
   // ** Hooks
-  /* const dispatch = useDispatch<AppDispatch>() */
+  const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.user)
 
-  /* useEffect(() => {
+  useEffect(() => {
     dispatch(
       fetchData({
         role,
@@ -349,7 +309,7 @@ const UserList = () => {
         currentPlan: plan
       })
     )
-  }, [dispatch, plan, role, status, value]) */
+  }, [dispatch, plan, role, status, value])
 
   const handleFilter = useCallback((val: string) => {
     setValue(val)
@@ -359,9 +319,9 @@ const UserList = () => {
     setRole(e.target.value)
   }, [])
 
-  /* const handlePlanChange = useCallback((e: SelectChangeEvent) => {
+  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
     setPlan(e.target.value)
-  }, []) */
+  }, [])
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
     setStatus(e.target.value)
@@ -373,33 +333,31 @@ const UserList = () => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          {/* <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} /> */}
+          <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} />
           <CardContent>
             <Grid container spacing={6}>
-              <Grid item sm={6} xs={12}>
+              <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
-                  <InputLabel id='role-select'>Função</InputLabel>
+                  <InputLabel id='role-select'>Select Role</InputLabel>
                   <Select
                     fullWidth
                     value={role}
                     id='select-role'
-                    label='Função'
+                    label='Select Role'
                     labelId='role-select'
                     onChange={handleRoleChange}
-                    inputProps={{ placeholder: 'Função' }}
+                    inputProps={{ placeholder: 'Select Role' }}
                   >
-                    <MenuItem value=''>Todos</MenuItem>
-                    <MenuItem value='admin'>Super Admin</MenuItem>
-                    <MenuItem value='real account admin'>Admin Conta Real</MenuItem>
-                    <MenuItem value='test account admin'>Admin Desafio</MenuItem>
-                    <MenuItem value='client'>Cliente</MenuItem>
-                    <MenuItem value='support'>Suporte</MenuItem>
-                    <MenuItem value='financial'>Financeiro</MenuItem>
-                    <MenuItem value='restricted'>Restrito</MenuItem>
+                    <MenuItem value=''>Select Role</MenuItem>
+                    <MenuItem value='admin'>Admin</MenuItem>
+                    <MenuItem value='author'>Author</MenuItem>
+                    <MenuItem value='editor'>Editor</MenuItem>
+                    <MenuItem value='maintainer'>Maintainer</MenuItem>
+                    <MenuItem value='subscriber'>Subscriber</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
-              {/* <Grid item sm={4} xs={12}>
+              <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='plan-select'>Select Plan</InputLabel>
                   <Select
@@ -418,23 +376,23 @@ const UserList = () => {
                     <MenuItem value='team'>Team</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid> */}
-              <Grid item sm={6} xs={12}>
+              </Grid>
+              <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
-                  <InputLabel id='status-select'>Status</InputLabel>
+                  <InputLabel id='status-select'>Select Status</InputLabel>
                   <Select
                     fullWidth
                     value={status}
                     id='select-status'
-                    label='Status'
+                    label='Select Status'
                     labelId='status-select'
                     onChange={handleStatusChange}
-                    inputProps={{ placeholder: 'Status' }}
+                    inputProps={{ placeholder: 'Select Role' }}
                   >
-                    <MenuItem value=''>Todos</MenuItem>
-                    <MenuItem value='active'>Ativo</MenuItem>
-                    <MenuItem value='pending'>Pendente</MenuItem>
-                    <MenuItem value='inactive'>Inativo</MenuItem>
+                    <MenuItem value=''>Select Role</MenuItem>
+                    <MenuItem value='pending'>Pending</MenuItem>
+                    <MenuItem value='active'>Active</MenuItem>
+                    <MenuItem value='inactive'>Inactive</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

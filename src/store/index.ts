@@ -5,9 +5,6 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import user from 'src/store/manage/user'
 import order from 'src/store/manage/order'
-/* import email from 'src/store/apps/email'
-import calendar from 'src/store/apps/calendar'
-import permissions from 'src/store/apps/permissions' */
 
 export const store = configureStore({
   reducer: {

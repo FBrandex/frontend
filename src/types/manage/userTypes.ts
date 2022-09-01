@@ -9,7 +9,6 @@ export type UsersType = {
   id: number
   role: string
   email: string
-  taxid: string
   status: string
   avatar: string
   company: string
