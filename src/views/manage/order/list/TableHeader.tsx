@@ -57,7 +57,7 @@ const TableHeader = (props: TableHeaderProps) => {
 
         <Link href='/manage/order/add' passHref>
           <Button sx={{ mb: 2 }} variant='contained'>
-            Create Order
+            Add Order
           </Button>
         </Link>
       </Box>

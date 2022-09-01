@@ -5,10 +5,10 @@ import { useState, ReactNode, MouseEvent } from 'react'
 import Link from 'next/link'
 
 // ** MUI Components
+/* import Divider from '@mui/material/Divider' */
 import Alert from '@mui/material/Alert'
 import MuiLink from '@mui/material/Link'
 import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
 import Checkbox from '@mui/material/Checkbox'
 import TextField from '@mui/material/TextField'
 import InputLabel from '@mui/material/InputLabel'
@@ -24,10 +24,10 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
 
 // ** Icons Imports
-import Google from 'mdi-material-ui/Google'
+/* import Google from 'mdi-material-ui/Google'
 import Github from 'mdi-material-ui/Github'
 import Twitter from 'mdi-material-ui/Twitter'
-import Facebook from 'mdi-material-ui/Facebook'
+import Facebook from 'mdi-material-ui/Facebook' */
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 
@@ -345,8 +345,8 @@ const LoginPage = () => {
                   </Link>
                 </Typography>
               </Box>
-              <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>ou</Divider>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {/* <Divider sx={{ mt: 5, mb: 7.5, '& .MuiDivider-wrapper': { px: 4 } }}>ou</Divider> */}
+              {/* <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Link href='/' passHref>
                   <IconButton component='a' onClick={(e: MouseEvent<HTMLElement>) => e.preventDefault()}>
                     <Facebook sx={{ color: '#497ce2' }} />
@@ -369,7 +369,7 @@ const LoginPage = () => {
                     <Google sx={{ color: '#db4437' }} />
                   </IconButton>
                 </Link>
-              </Box>
+              </Box> */}
             </form>
           </BoxWrapper>
         </Box>

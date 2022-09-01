@@ -16,9 +16,10 @@ import Typography from '@mui/material/Typography'
 
 // ** Icons Imports
 /* import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
-import MessageOutline from 'mdi-material-ui/MessageOutline' */
+import MessageOutline from 'mdi-material-ui/MessageOutline'
 import CogOutline from 'mdi-material-ui/CogOutline'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
+import EmailOutline from 'mdi-material-ui/EmailOutline' */
+import TuneVertical from 'mdi-material-ui/TuneVertical'
 import LogoutVariant from 'mdi-material-ui/LogoutVariant'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
@@ -157,7 +158,7 @@ const UserDropdown = (props: Props) => {
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/user/view/1')}>
           <Box sx={styles}>
             <AccountOutline sx={{ mr: 2 }} />
-            Meu Perfil
+            Profile
           </Box>
         </MenuItem>
         {/* <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
@@ -175,8 +176,8 @@ const UserDropdown = (props: Props) => {
         <Divider />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/account-settings')}>
           <Box sx={styles}>
-            <CogOutline sx={{ mr: 2 }} />
-            Configurações
+            <TuneVertical sx={{ mr: 2 }} />
+            Settings
           </Box>
         </MenuItem>
         {/* <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
@@ -200,7 +201,7 @@ const UserDropdown = (props: Props) => {
               color: 'text.secondary'
             }}
           />
-          Sair
+          LogOut
         </MenuItem>
       </Menu>
     </Fragment>
