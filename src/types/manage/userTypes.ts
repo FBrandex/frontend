@@ -7,15 +7,27 @@ export type UserLayoutType = {
 
 export type UsersType = {
   id: number
-  role: string
-  email: string
-  status: string
-  avatar: string
-  company: string
-  country: string
-  contact: string
+  client_cod: string
   fullName: string
   username: string
-  currentPlan: string
+  password: string
+  email: string
+  telephone: string
+  cellphone: string
+  taxid: string
+  birthdate: string
+  address_street: string
+  address_number: string
+  complement: string
+  zip: string
+  district: string
+  city: string
+  state: string
+  country: string
+  role: string
+  status: string
+  lgpd_check: string
+  avatar: string
+  currentPlan: String
   avatarColor?: ThemeColor
 }

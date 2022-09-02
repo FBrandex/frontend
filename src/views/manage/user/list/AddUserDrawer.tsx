@@ -257,11 +257,13 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
               onChange={e => setRole(e.target.value)}
               inputProps={{ placeholder: 'Select Role' }}
             >
-              <MenuItem value='admin'>Admin</MenuItem>
-              <MenuItem value='author'>Author</MenuItem>
-              <MenuItem value='editor'>Editor</MenuItem>
-              <MenuItem value='maintainer'>Maintainer</MenuItem>
-              <MenuItem value='subscriber'>Subscriber</MenuItem>
+              <MenuItem value='admin'>Super Admin</MenuItem>
+              <MenuItem value='realAccountAdmin'>Real Account Admin</MenuItem>
+              <MenuItem value='testAccountAdmin'>Test Account Admin</MenuItem>
+              <MenuItem value='client'>Client</MenuItem>
+              <MenuItem value='support'>Support</MenuItem>
+              <MenuItem value='financial'>Financial</MenuItem>
+              <MenuItem value='restricted'>Restricted</MenuItem>
             </Select>
           </FormControl>
           <FormControl fullWidth sx={{ mb: 6 }}>

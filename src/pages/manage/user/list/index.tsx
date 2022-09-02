@@ -62,11 +62,13 @@ interface UserStatusType {
 
 // ** Vars
 const userRoleObj: UserRoleType = {
-  admin: <Laptop sx={{ mr: 2, color: 'error.main' }} />,
-  author: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
-  editor: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
-  maintainer: <ChartDonut sx={{ mr: 2, color: 'success.main' }} />,
-  subscriber: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
+  admin: <Laptop sx={{ mr: 2, color: 'success.main' }} />,
+  realAccountAdmin: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
+  testAccountAdmin: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
+  support: <ChartDonut sx={{ mr: 2, color: 'success.main' }} />,
+  financial: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />,
+  restricted: <AccountOutline sx={{ mr: 2, color: 'error.main' }} />,
+  client: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
 }
 
 interface CellType {
@@ -187,12 +189,25 @@ const RowOptions = ({ id }: { id: number | string }) => {
 
 const columns = [
   {
+    flex: 0.03,
+    minWidth: 50,
+    field: 'id',
+    headerName: 'ID',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography noWrap >
+          {row.id}
+        </Typography>
+      )
+    }
+  },
+  {
     flex: 0.2,
     minWidth: 230,
     field: 'fullName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { id, fullName, username } = row
+      const { id, fullName, role } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -210,7 +225,7 @@ const columns = [
             </Link>
             <Link href={`/manage/user/view/${id}`} passHref>
               <Typography noWrap component='a' variant='caption' sx={{ textDecoration: 'none' }}>
-                @{username}
+                {role}
               </Typography>
             </Link>
           </Box>
@@ -219,20 +234,20 @@ const columns = [
     }
   },
   {
-    flex: 0.2,
-    minWidth: 250,
-    field: 'email',
-    headerName: 'Email',
+    flex: 0.08,
+    minWidth: 90,
+    field: 'taxid',
+    headerName: 'Tax ID',
     renderCell: ({ row }: CellType) => {
       return (
         <Typography noWrap variant='body2'>
-          {row.email}
+          {row.taxid}
         </Typography>
       )
     }
   },
-  {
-    flex: 0.15,
+  /* {
+    flex: 0.1,
     field: 'role',
     minWidth: 150,
     headerName: 'Role',
@@ -246,23 +261,23 @@ const columns = [
         </Box>
       )
     }
-  },
+  }, */
   {
     flex: 0.15,
     minWidth: 120,
-    headerName: 'Plan',
-    field: 'currentPlan',
+    headerName: 'Email',
+    field: 'email',
     renderCell: ({ row }: CellType) => {
       return (
-        <Typography variant='subtitle1' noWrap sx={{ textTransform: 'capitalize' }}>
-          {row.currentPlan}
+        <Typography variant='subtitle1' noWrap >
+          {row.email}
         </Typography>
       )
     }
   },
   {
-    flex: 0.1,
-    minWidth: 110,
+    flex: 0.05,
+    minWidth: 90,
     field: 'status',
     headerName: 'Status',
     renderCell: ({ row }: CellType) => {
@@ -278,7 +293,7 @@ const columns = [
     }
   },
   {
-    flex: 0.1,
+    flex: 0.05,
     minWidth: 90,
     sortable: false,
     field: 'actions',
@@ -336,7 +351,7 @@ const UserList = () => {
           <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} />
           <CardContent>
             <Grid container spacing={6}>
-              <Grid item sm={4} xs={12}>
+              <Grid item sm={6} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='role-select'>Select Role</InputLabel>
                   <Select
@@ -348,16 +363,18 @@ const UserList = () => {
                     onChange={handleRoleChange}
                     inputProps={{ placeholder: 'Select Role' }}
                   >
-                    <MenuItem value=''>Select Role</MenuItem>
-                    <MenuItem value='admin'>Admin</MenuItem>
-                    <MenuItem value='author'>Author</MenuItem>
-                    <MenuItem value='editor'>Editor</MenuItem>
-                    <MenuItem value='maintainer'>Maintainer</MenuItem>
-                    <MenuItem value='subscriber'>Subscriber</MenuItem>
+                    <MenuItem value=''>No Filter</MenuItem>
+                    <MenuItem value='admin'>Super Admin</MenuItem>
+                    <MenuItem value='realAccountAdmin'>Real Account Admin</MenuItem>
+                    <MenuItem value='testAccountAdmin'>Test Account Admin</MenuItem>
+                    <MenuItem value='client'>Client</MenuItem>
+                    <MenuItem value='support'>Support</MenuItem>
+                    <MenuItem value='financial'>Financial</MenuItem>
+                    <MenuItem value='restricted'>Restricted</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item sm={4} xs={12}>
+              {/* <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='plan-select'>Select Plan</InputLabel>
                   <Select
@@ -376,8 +393,8 @@ const UserList = () => {
                     <MenuItem value='team'>Team</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid>
-              <Grid item sm={4} xs={12}>
+              </Grid> */}
+              <Grid item sm={6} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='status-select'>Select Status</InputLabel>
                   <Select
