@@ -21,14 +21,14 @@ import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
+/* import AccountOutline from 'mdi-material-ui/AccountOutline'
 import Laptop from 'mdi-material-ui/Laptop'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
-import CogOutline from 'mdi-material-ui/CogOutline'
+import CogOutline from 'mdi-material-ui/CogOutline' */
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -61,7 +61,7 @@ interface UserStatusType {
 }
 
 // ** Vars
-const userRoleObj: UserRoleType = {
+/* const userRoleObj: UserRoleType = {
   admin: <Laptop sx={{ mr: 2, color: 'success.main' }} />,
   realAccountAdmin: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
   testAccountAdmin: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
@@ -69,7 +69,7 @@ const userRoleObj: UserRoleType = {
   financial: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />,
   restricted: <AccountOutline sx={{ mr: 2, color: 'error.main' }} />,
   client: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
-}
+} */
 
 interface CellType {
   row: UsersType
@@ -246,6 +246,7 @@ const columns = [
       )
     }
   },
+  
   /* {
     flex: 0.1,
     field: 'role',
