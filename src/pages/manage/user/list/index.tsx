@@ -1,5 +1,6 @@
 // ** React Imports
-import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
+/* import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react' */
+import { useState, useEffect, MouseEvent, useCallback } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -52,9 +53,9 @@ import { UsersType } from 'src/types/manage/userTypes'
 import TableHeader from 'src/views/manage/user/list/TableHeader'
 import AddUserDrawer from 'src/views/manage/user/list/AddUserDrawer'
 
-interface UserRoleType {
+/* interface UserRoleType {
   [key: string]: ReactElement
-}
+} */
 
 interface UserStatusType {
   [key: string]: ThemeColor
