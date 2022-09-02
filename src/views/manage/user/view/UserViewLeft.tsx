@@ -213,7 +213,7 @@ const UserViewLeft = ({ data }: Props) => {
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
-                  <Typography variant='body2'>+1 {data.contact}</Typography>
+                  <Typography variant='body2'>+1 {data.cellphone}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
@@ -284,7 +284,7 @@ const UserViewLeft = ({ data }: Props) => {
                       <TextField fullWidth label='TAX ID' defaultValue='Tax-8894' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth label='Contact' defaultValue={`+1 ${data.contact}`} />
+                      <TextField fullWidth label='Contact' defaultValue={`+1 ${data.cellphone}`} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
