@@ -61,7 +61,7 @@ interface UserStatusType {
 }
 
 // ** Vars
-const userRoleObj: UserRoleType = {
+/* const userRoleObj: UserRoleType = {
   admin: <Laptop sx={{ mr: 2, color: 'success.main' }} />,
   realAccountAdmin: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
   testAccountAdmin: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
@@ -69,7 +69,7 @@ const userRoleObj: UserRoleType = {
   financial: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />,
   restricted: <AccountOutline sx={{ mr: 2, color: 'error.main' }} />,
   client: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
-}
+} */
 
 interface CellType {
   row: UsersType
