@@ -247,6 +247,7 @@ const columns = [
       )
     }
   },
+
   /* {
     flex: 0.1,
     field: 'role',
@@ -335,9 +336,9 @@ const UserList = () => {
     setRole(e.target.value)
   }, [])
 
-  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
+ /*  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
     setPlan(e.target.value)
-  }, [])
+  }, []) */
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
     setStatus(e.target.value)
@@ -375,6 +376,7 @@ const UserList = () => {
                   </Select>
                 </FormControl>
               </Grid>
+              
               {/* <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='plan-select'>Select Plan</InputLabel>
