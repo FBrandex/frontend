@@ -1,6 +1,5 @@
 // ** React Imports
-/* import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react' */
-import { useState, useEffect, MouseEvent, useCallback } from 'react'
+import { useState, useEffect, MouseEvent, useCallback, ReactElement } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -22,14 +21,14 @@ import CardContent from '@mui/material/CardContent'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-/* import Laptop from 'mdi-material-ui/Laptop'
+import Laptop from 'mdi-material-ui/Laptop'
 import ChartDonut from 'mdi-material-ui/ChartDonut'
 import CogOutline from 'mdi-material-ui/CogOutline'
-import AccountOutline from 'mdi-material-ui/AccountOutline' */
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+import AccountOutline from 'mdi-material-ui/AccountOutline'
 
 // ** Store Imports
 import { useDispatch, useSelector } from 'react-redux'
@@ -53,16 +52,16 @@ import { UsersType } from 'src/types/manage/userTypes'
 import TableHeader from 'src/views/manage/user/list/TableHeader'
 import AddUserDrawer from 'src/views/manage/user/list/AddUserDrawer'
 
-/* interface UserRoleType {
+interface UserRoleType {
   [key: string]: ReactElement
-} */
+}
 
 interface UserStatusType {
   [key: string]: ThemeColor
 }
 
 // ** Vars
-/* const userRoleObj: UserRoleType = {
+const userRoleObj: UserRoleType = {
   admin: <Laptop sx={{ mr: 2, color: 'success.main' }} />,
   realAccountAdmin: <CogOutline sx={{ mr: 2, color: 'warning.main' }} />,
   testAccountAdmin: <PencilOutline sx={{ mr: 2, color: 'info.main' }} />,
@@ -70,7 +69,7 @@ interface UserStatusType {
   financial: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />,
   restricted: <AccountOutline sx={{ mr: 2, color: 'error.main' }} />,
   client: <AccountOutline sx={{ mr: 2, color: 'primary.main' }} />
-} */
+}
 
 interface CellType {
   row: UsersType
@@ -247,7 +246,6 @@ const columns = [
       )
     }
   },
-
   /* {
     flex: 0.1,
     field: 'role',
@@ -336,9 +334,9 @@ const UserList = () => {
     setRole(e.target.value)
   }, [])
 
- /*  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
+  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
     setPlan(e.target.value)
-  }, []) */
+  }, [])
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
     setStatus(e.target.value)
@@ -376,8 +374,7 @@ const UserList = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              
-              {/* <Grid item sm={4} xs={12}>
+              <Grid item sm={4} xs={12} sx={{ display: 'none' }}>
                 <FormControl fullWidth>
                   <InputLabel id='plan-select'>Select Plan</InputLabel>
                   <Select
@@ -396,7 +393,7 @@ const UserList = () => {
                     <MenuItem value='team'>Team</MenuItem>
                   </Select>
                 </FormControl>
-              </Grid> */}
+              </Grid>
               <Grid item sm={6} xs={12}>
                 <FormControl fullWidth>
                   <InputLabel id='status-select'>Select Status</InputLabel>
