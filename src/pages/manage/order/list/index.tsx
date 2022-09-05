@@ -141,14 +141,14 @@ const RowOptions = ({ id }: { id: number | string }) => {
 }
 
 // ** Vars
-const orderStatusObj: OrderStatusObj = {
+/* const orderStatusObj: OrderStatusObj = {
   Sent: { color: 'secondary', icon: <Send sx={{ fontSize: '1.25rem' }} /> },
   Paid: { color: 'success', icon: <Check sx={{ fontSize: '1.25rem' }} /> },
   Draft: { color: 'primary', icon: <ContentSaveOutline sx={{ fontSize: '1.25rem' }} /> },
   'Partial Payment': { color: 'warning', icon: <ChartPie sx={{ fontSize: '1.25rem' }} /> },
   'Past Due': { color: 'error', icon: <InformationOutline sx={{ fontSize: '1.25rem' }} /> },
   Downloaded: { color: 'info', icon: <ArrowDown sx={{ fontSize: '1.25rem' }} /> }
-}
+} */
 
 // ** renders client column
 const renderClient = (row: OrderType) => {
