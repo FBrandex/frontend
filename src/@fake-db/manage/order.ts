@@ -26,7 +26,7 @@ const data: { orders: OrderType[] } = {
       avatar: '',
       avatarColor: 'primary',
       orderStatus: 'Paid',
-      balance: '$724',
+      balance: 0,
       dueDate: `23 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -90,7 +90,7 @@ const data: { orders: OrderType[] } = {
       total: 4056,
       avatar: '/images/avatars/4.png',
       orderStatus: 'Draft',
-      balance: '$815',
+      balance: 0,
       dueDate: `30 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -124,7 +124,7 @@ const data: { orders: OrderType[] } = {
       avatar: '',
       avatarColor: 'success',
       orderStatus: 'Draft',
-      balance: '$407',
+      balance: 0,
       dueDate: `22 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -140,7 +140,7 @@ const data: { orders: OrderType[] } = {
       total: 4309,
       avatar: '/images/avatars/5.png',
       orderStatus: 'Paid',
-      balance: '-$205',
+      balance: 0,
       dueDate: `10 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -172,7 +172,7 @@ const data: { orders: OrderType[] } = {
       total: 4776,
       avatar: '/images/avatars/7.png',
       orderStatus: 'Downloaded',
-      balance: '$305',
+      balance: 0,
       dueDate: `02 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -188,7 +188,7 @@ const data: { orders: OrderType[] } = {
       total: 3789,
       avatar: '/images/avatars/8.png',
       orderStatus: 'Partial Payment',
-      balance: '$666',
+      balance: 0,
       dueDate: `18 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -252,7 +252,7 @@ const data: { orders: OrderType[] } = {
       total: 5285,
       avatar: '/images/avatars/4.png',
       orderStatus: 'Partial Payment',
-      balance: '-$202',
+      balance: 0,
       dueDate: `02 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -268,7 +268,7 @@ const data: { orders: OrderType[] } = {
       total: 3668,
       avatar: '/images/avatars/5.png',
       orderStatus: 'Downloaded',
-      balance: '$731',
+      balance: 0,
       dueDate: `15 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -285,7 +285,7 @@ const data: { orders: OrderType[] } = {
       avatar: '',
       avatarColor: 'warning',
       orderStatus: 'Sent',
-      balance: '-$344',
+      balance: 0,
       dueDate: `17 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -301,7 +301,7 @@ const data: { orders: OrderType[] } = {
       total: 3198,
       avatar: '/images/avatars/6.png',
       orderStatus: 'Partial Payment',
-      balance: '-$253',
+      balance: 0,
       dueDate: `16 ${currentMonth} ${now.getFullYear()}`
     },
     {
@@ -334,7 +334,7 @@ const data: { orders: OrderType[] } = {
       total: 5612,
       avatar: '/images/avatars/7.png',
       orderStatus: 'Downloaded',
-      balance: '$883',
+      balance: 0,
       dueDate: `12 ${currentMonth} ${now.getFullYear()}`
     },
     {

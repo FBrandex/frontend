@@ -8,57 +8,57 @@ const data: { permissions: PermissionRowType[] } = {
   permissions: [
     {
       id: 1,
-      name: 'Management',
-      assignedTo: ['administrator'],
+      name: 'Add, Update and Remove User',
+      assignedTo: ['admin'],
       createdDate: '14 Apr 2022, 8:43 PM'
     },
     {
       id: 2,
-      assignedTo: ['administrator'],
-      name: 'Manage Billing & Roles',
-      createdDate: '16 Sep 2022, 5:20 PM'
+      name: 'Add, Update and Remove Order',
+      createdDate: '16 Sep 2022, 5:20 PM',
+      assignedTo: ['admin']
     },
     {
       id: 3,
-      name: 'Add & Remove Users',
+      name: 'Upload Files',
       createdDate: '14 Oct 2022, 10:20 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['admin', 'realAccountAdmin', 'testAccountAdmin']
     },
     {
       id: 4,
-      name: 'Project Planning',
+      name: 'Enable/Disable Test',
       createdDate: '14 Oct 2022, 10:20 AM',
-      assignedTo: ['administrator', 'users', 'support']
+      assignedTo: ['admin', 'testAccountAdmin']
     },
     {
       id: 5,
-      name: 'Manage Email Sequences',
+      name: 'Enable/Disable Real Account',
       createdDate: '23 Aug 2022, 2:00 PM',
-      assignedTo: ['administrator', 'users', 'support']
+      assignedTo: ['admin', 'realAccountAdmin']
     },
     {
       id: 6,
-      name: 'Client Communication',
+      name: 'Site Management',
       createdDate: '15 Apr 2022, 11:30 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['admin', 'support']
     },
     {
       id: 7,
       name: 'Only View',
       createdDate: '04 Dec 2022, 8:15 PM',
-      assignedTo: ['administrator', 'restricted-user']
+      assignedTo: ['admin', 'restricted']
     },
     {
       id: 8,
       name: 'Financial Management',
       createdDate: '25 Feb 2022, 10:30 AM',
-      assignedTo: ['administrator', 'manager']
+      assignedTo: ['admin', 'financial']
     },
     {
       id: 9,
       name: 'Manage Others’ Tasks',
       createdDate: '04 Nov 2022, 11:45 AM',
-      assignedTo: ['administrator', 'support']
+      assignedTo: ['admin', 'support']
     }
   ]
 }

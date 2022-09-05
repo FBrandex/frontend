@@ -6,7 +6,8 @@ import {
   HomeOutline,
   ShieldOutline,
   ThumbsUpDownOutline,
-  CogOutline
+  CogOutline,
+  Web
   
 } from 'mdi-material-ui'
 
@@ -147,6 +148,11 @@ const navigation = (): VerticalNavItemsType => {
       ],
     },
     {
+      title: 'Site',
+      icon: Web,
+      path: '/site',
+    },
+    {
       title: 'Settings',
       icon: CogOutline,
       children: [
@@ -171,7 +177,7 @@ const navigation = (): VerticalNavItemsType => {
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-    },
+    }
   ]
 }
 

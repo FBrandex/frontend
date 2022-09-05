@@ -52,15 +52,15 @@ const cardData: CardDataType[] = [
 ]
 
 const rolesArr = [
-  'User Management',
-  'Content Management',
-  'Disputes Management',
-  'Database Management',
+  'Add, Update and Remove User',
+  'Add, Update and Remove Order',
+  'Upload Files',
+  'Enable/Disable Test',
+  'Enable/Disable Real Account',
+  'Site Management',
+  'Only View',
   'Financial Management',
-  'Reporting',
-  'API Control',
-  'Repository Management',
-  'Payroll'
+  'Manage Others’ Tasks'
 ]
 
 const RolesCards = () => {

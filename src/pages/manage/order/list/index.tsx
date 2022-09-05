@@ -29,7 +29,6 @@ import ChartPie from 'mdi-material-ui/ChartPie'
 import Download from 'mdi-material-ui/Download'
 import ArrowDown from 'mdi-material-ui/ArrowDown'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
@@ -173,14 +172,14 @@ const defaultColumns = [
     flex: 0.1,
     field: 'id',
     minWidth: 80,
-    headerName: '#',
+    headerName: 'Invoice',
     renderCell: ({ row }: CellType) => (
       <Link href={`/manage/order/preview/${row.id}`} passHref>
-        <StyledLink>{`#${row.id}`}</StyledLink>
+        <StyledLink>{`${row.id}`}</StyledLink>
       </Link>
     )
   },
-  {
+  /* {
     flex: 0.1,
     minWidth: 80,
     field: 'orderStatus',
@@ -217,7 +216,7 @@ const defaultColumns = [
         </Tooltip>
       )
     }
-  },
+  }, */
   {
     flex: 0.25,
     field: 'name',
@@ -245,13 +244,13 @@ const defaultColumns = [
       )
     }
   },
-  {
+  /* {
     flex: 0.1,
     minWidth: 90,
     field: 'total',
     headerName: 'Total',
     renderCell: ({ row }: CellType) => <Typography variant='body2'>{`$${row.total || 0}`}</Typography>
-  },
+  }, */
   {
     flex: 0.15,
     minWidth: 125,
