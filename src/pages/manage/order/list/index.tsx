@@ -23,18 +23,18 @@ import { DataGrid, GridRowId } from '@mui/x-data-grid'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ** Icons Imports
-import Send from 'mdi-material-ui/Send'
+/* import Send from 'mdi-material-ui/Send'
 import Check from 'mdi-material-ui/Check'
 import ChartPie from 'mdi-material-ui/ChartPie'
-import Download from 'mdi-material-ui/Download'
 import ArrowDown from 'mdi-material-ui/ArrowDown'
+import InformationOutline from 'mdi-material-ui/InformationOutline'
+import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline' */
+import Download from 'mdi-material-ui/Download'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import DeleteOutline from 'mdi-material-ui/DeleteOutline'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
-import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
 
 // ** Third Party Imports
 import format from 'date-fns/format'
@@ -64,12 +64,12 @@ import 'react-datepicker/dist/react-datepicker.css'
 // ** Styled Components
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
-interface OrderStatusObj {
+/* interface OrderStatusObj {
   [key: string]: {
     color: ThemeColor
     icon: ReactElement
   }
-}
+} */
 
 interface CustomInputProps {
   dates: Date[]
@@ -179,6 +179,7 @@ const defaultColumns = [
       </Link>
     )
   },
+
   /* {
     flex: 0.1,
     minWidth: 80,
@@ -244,6 +245,7 @@ const defaultColumns = [
       )
     }
   },
+
   /* {
     flex: 0.1,
     minWidth: 90,
@@ -287,6 +289,7 @@ const CustomInput = forwardRef((props: CustomInputProps, ref) => {
 
   return <TextField fullWidth inputRef={ref} {...updatedProps} label={props.label || ''} value={value} />
 })
+
 /* eslint-enable */
 
 const OrderList = () => {
