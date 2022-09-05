@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 import PageHeader from 'src/@core/components/page-header'
 
 // ** Demo Components Imports
-import Table from 'src/views/setting/roles/Table'
+/* import Table from 'src/views/setting/roles/Table' */
 import RoleCards from 'src/views/setting/roles/RoleCards'
 
 const RolesComponent = () => {
@@ -24,7 +24,7 @@ const RolesComponent = () => {
       <Grid item xs={12} sx={{ mb: 5 }}>
         <RoleCards />
       </Grid>
-      <PageHeader
+      {/* <PageHeader
         title={<Typography variant='h5'>Total users with their roles</Typography>}
         subtitle={
           <Typography variant='body2'>
@@ -34,7 +34,7 @@ const RolesComponent = () => {
       />
       <Grid item xs={12}>
         <Table />
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }

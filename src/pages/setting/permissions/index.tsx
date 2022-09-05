@@ -54,11 +54,13 @@ interface CellType {
 }
 
 const colors: Colors = {
+  admin: 'primary',
+  realAccountAdmin: 'info',
+  testAccountAdmin:  'info',
+  client: 'info',
   support: 'info',
-  users: 'success',
-  manager: 'warning',
-  administrator: 'primary',
-  'restricted-user': 'error'
+  financial: 'info',
+  restricted: 'error'
 }
 
 const defaultColumns = [

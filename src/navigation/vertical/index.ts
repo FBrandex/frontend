@@ -140,6 +140,10 @@ const navigation = (): VerticalNavItemsType => {
           title: 'Transfers',
           path: '/finance/transfer',
         },
+        {
+          title: 'Reports',
+          path: '/finance/report',
+        }
       ],
     },
     {

@@ -127,10 +127,12 @@
   "Interview": "Entrevista",
   "Evidence History": "Histórico de Evidência",
   "Financial": "Financeiro",
+  "Finance": "Financeiro",
+  "Transfers": "Repasses",
+  "Reports": "Relatórios",
   "Access Control": "Controle de Acesso",
   "Settings": "Configurações",
   "Assignments": "Atribuições",
   "Roles": "Funções",
-  "Permissions": "Permissões",
-  "Transfers": "Repasses"
+  "Permissions": "Permissões"
 }

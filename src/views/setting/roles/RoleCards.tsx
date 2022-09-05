@@ -42,11 +42,13 @@ interface CardDataType {
 }
 
 const cardData: CardDataType[] = [
-  { totalUsers: 4, title: 'Administrator', avatars: ['1.png', '2.png', '3.png', '4.png'] },
-  { totalUsers: 7, title: 'Manager', avatars: ['5.png', '6.png', '7.png', '8.png', '1.png', '2.png', '3.png'] },
-  { totalUsers: 5, title: 'Users', avatars: ['4.png', '5.png', '6.png', '7.png', '8.png'] },
-  { totalUsers: 3, title: 'Support', avatars: ['1.png', '2.png', '3.png'] },
-  { totalUsers: 2, title: 'Restricted User', avatars: ['4.png', '5.png'] }
+  { totalUsers: 1, title: 'Super Admin', avatars: ['1.png'] },
+  { totalUsers: 1, title: 'Real Account Admin', avatars: ['2.png'] },
+  { totalUsers: 1, title: 'Test Account Admin', avatars: ['3.png'] },
+  { totalUsers: 20, title: 'Client', avatars: ['7.png', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png', '13.png', '13.png', '13.png', '12.png', '13.png', '13.png', '13.png', '13.png', '12.png', '13.png', '13.png', '13.png', '13.png'] },
+  { totalUsers: 1, title: 'Support', avatars: ['5.png'] },
+  { totalUsers: 1, title: 'Financial', avatars: ['4.png'] },
+  { totalUsers: 1, title: 'Restricted', avatars: ['6.png'] }
 ]
 
 const rolesArr = [
