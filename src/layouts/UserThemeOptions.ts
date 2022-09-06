@@ -21,9 +21,9 @@ const UserThemeOptions = (): ThemeOptions => {
     
     palette:{
       primary: {
-        light: '#4ac296',
+        light: '#62DBA3',
         main: '#34c38f',
-        dark: '#2aa377',
+        dark: '#26A785',
         contrastText: '#FFF'
       }
     },
@@ -112,9 +112,9 @@ const UserThemeOptions = (): ThemeOptions => {
         }
       }
     }, */
-    /* shape: {
-      borderRadius: 8
-    }, */
+    shape: {
+      borderRadius: 4
+    },
     typography: {
       fontFamily:
         '"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
