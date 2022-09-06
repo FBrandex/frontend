@@ -153,7 +153,7 @@ const navigation = (): VerticalNavItemsType => {
       path: '/site',
     },
     {
-      title: 'Account Settings',
+      title: 'Settings',
       icon: CogOutline,
       children: [
         {

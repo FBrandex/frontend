@@ -177,7 +177,7 @@ const UserDropdown = (props: Props) => {
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/account-settings')}>
           <Box sx={styles}>
             <TuneVertical sx={{ mr: 2 }} />
-            Settings
+            Account Settings
           </Box>
         </MenuItem>
         {/* <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
