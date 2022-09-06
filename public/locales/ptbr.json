@@ -32,7 +32,6 @@
   "Reset Password": "Reset Password",
   "Reset Password v1": "Reset Password v1",
   "Reset Password v2": "Reset Password v2",
-  "Account Settings": "Account Settings",
   "Pricing": "Pricing",
   "FAQ": "FAQ",
   "Knowledge Base": "Knowledge Base",
@@ -132,6 +131,7 @@
   "Reports": "Relatórios",
   "Access Control": "Controle de Acesso",
   "Settings": "Configurações",
+  "Account Settings": "Configurações da Conta",
   "Assignments": "Atribuições",
   "Roles": "Funções",
   "Permissions": "Permissões"

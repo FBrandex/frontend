@@ -32,7 +32,6 @@
   "Reset Password": "Reset Password",
   "Reset Password v1": "Reset Password v1",
   "Reset Password v2": "Reset Password v2",
-  "Account Settings": "Account Settings",
   "Pricing": "Pricing",
   "FAQ": "FAQ",
   "Knowledge Base": "Knowledge Base",
@@ -127,10 +126,13 @@
   "Interview": "Interview",
   "Evidence History": "Evidence History",
   "Financial": "Financial",
+  "Finance": "Finance",
+  "Transfers": "Transfers",
+  "Reports": "Reports",
   "Access Control": "Access Control",
   "Settings": "Settings",
+  "Account Settings": "Account Settings",
   "Assignments": "Assignments",
   "Roles": "Roles",
-  "Permissions": "Permissions",
-  "Transfers": "Transfers"
+  "Permissions": "Permissions"
 }

@@ -153,7 +153,7 @@ const navigation = (): VerticalNavItemsType => {
       path: '/site',
     },
     {
-      title: 'Settings',
+      title: 'Account Settings',
       icon: CogOutline,
       children: [
         {
@@ -171,13 +171,13 @@ const navigation = (): VerticalNavItemsType => {
         },
       ],
     },
-    {
+    /* {
       title: 'Access Control',
       icon: ShieldOutline,
       path: '/acl',
       action: 'read',
       subject: 'acl-page',
-    }
+    } */
   ]
 }
 
