@@ -196,42 +196,25 @@ const Register = () => {
                 justifyContent: 'center'
               }}
             >
-              <svg width={50} fill='none' height={30} viewBox='0 15 150 100' xmlns='http://www.w3.org/2000/svg'>
-                <rect
-                  rx='0'
-                  width='50.2886'
-                  height='143.953'
+              <svg width={40} fill='none' height={22} viewBox='0 0 268 234' xmlns='http://www.w3.org/2000/svg'>
+                <path
+                  d='M 64.963 233.993 L 0 233.993 L 101.517 114.061 L 4.974 0.008 L 69.936 0.008
+              L 268 233.993 L 203.035 233.993 L 133.998 152.435 L 64.963 233.993 Z M 198.062 0.008
+              L 263.025 0.008 L 190.554 85.623 L 158.073 47.251 L 198.062 0.008 Z'
                   fill={theme.palette.primary.main}
-                  transform='matrix(-0.4 0.1 0.6 0.9 40 0)'
                 />
-                <rect
-                  rx='0'
-                  width='50.2886'
-                  height='143.953'
-                  fillOpacity='0.4'
-                  fill='url(#paint0_linear_7821_79167)'
-                  transform='matrix(-0.4 0.1 0.6 0.9 40 0)'
-                />
-                <rect
-                  rx='0'
-                  width='50.2886'
-                  height='143.953'
-                  fill={theme.palette.primary.main}
-                  transform='matrix(0.4 0.1 -0.6 0.9 100 0)'
-                />
-                <rect
-                  rx='0'
-                  width='50.2886'
-                  height='143.953'
+                <path
+                  d='M 64.963 233.993 L 0 233.993 L 101.517 114.061 L 4.974 0.008 L 69.936 0.008
+              L 268 233.993 L 203.035 233.993 L 133.998 152.435 L 64.963 233.993 Z M 198.062 0.008
+              L 263.025 0.008 L 190.554 85.623 L 158.073 47.251 L 198.062 0.008 Z'
                   fillOpacity='0.4'
                   fill='url(#paint1_linear_7821_79167)'
-                  transform='matrix(0.4 0.1 -0.6 0.9 100 0)'
                 />
                 <defs>
                   <linearGradient
-                    y1='0'
-                    x1='25.1443'
-                    x2='25.1443'
+                    y1='143.953'
+                    x1='0'
+                    x2='143.953'
                     y2='143.953'
                     id='paint0_linear_7821_79167'
                     gradientUnits='userSpaceOnUse'
@@ -240,9 +223,9 @@ const Register = () => {
                     <stop offset='1' stopOpacity='0' />
                   </linearGradient>
                   <linearGradient
-                    y1='0'
-                    x1='25.1443'
-                    x2='25.1443'
+                    y1='143.953'
+                    x1='0'
+                    x2='143.953'
                     y2='143.953'
                     id='paint1_linear_7821_79167'
                     gradientUnits='userSpaceOnUse'
