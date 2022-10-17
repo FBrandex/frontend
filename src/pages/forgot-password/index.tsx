@@ -161,7 +161,7 @@ const ForgotPassword = () => {
                   </linearGradient>
                 </defs>
               </svg>
-              <Typography variant='h6' sx={{ ml: 2, lineHeight: 1, fontWeight: 700, fontSize: '1.5rem !important' }}>
+              <Typography sx={{ lineHeight: 1, fontWeight: 400 }}>
                 {themeConfig.templateName}
               </Typography>
             </Box>

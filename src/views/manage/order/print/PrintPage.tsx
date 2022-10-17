@@ -115,7 +115,7 @@ const OrderPrint = ({ id }: OrderLayoutProps) => {
                     </linearGradient>
                   </defs>
                 </svg>
-                <Typography variant='h6' sx={{ ml: 2, fontWeight: 700, lineHeight: 1.2 }}>
+                <Typography sx={{ fontWeight: 400, lineHeight: 1.2 }}>
                   {themeConfig.templateName}
                 </Typography>
               </Box>

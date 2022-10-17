@@ -150,7 +150,7 @@ const LoginPage = () => {
     })
   }
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+  const imageSource = 'auth-v2-login-illustration'
 
   return (
     <Box className='content-right'>
@@ -226,7 +226,7 @@ const LoginPage = () => {
                   </linearGradient>
                 </defs>
               </svg>
-              <Typography variant='h6' sx={{ ml: 2, lineHeight: 1, fontWeight: 700, fontSize: '1.5rem !important' }}>
+              <Typography sx={{ lineHeight: 1, fontWeight: 400 }}>
                 {themeConfig.templateName}
               </Typography>
             </Box>
