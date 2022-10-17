@@ -4,7 +4,6 @@ import {
   DatabaseEditOutline,
   Finance,
   HomeOutline,
-  ShieldOutline,
   ThumbsUpDownOutline,
   CogOutline,
   Web
@@ -166,6 +165,10 @@ const navigation = (): VerticalNavItemsType => {
             {
               title: 'Assignments',
               path: '/setting/permissions',
+            },
+            {
+              title: 'SMTP',
+              path: '/setting/smtp',
             },
           ]
         },
