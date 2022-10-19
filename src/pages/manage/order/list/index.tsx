@@ -122,16 +122,16 @@ const RowOptions = ({ id }: { id: number | string }) => {
           horizontal: 'right'
         }}
       >
-        <MenuItem>
+        {/* <MenuItem>
           <Download fontSize='small' sx={{ mr: 2 }} />
           Download
         </MenuItem>
-        <Link href={`/manage/order/edit/${id}`} passHref>
+        <Link href={`/manage/order/edit/${id}`} passHref> */}
           <MenuItem>
             <PencilOutline fontSize='small' sx={{ mr: 2 }} />
             Edit
           </MenuItem>
-        </Link>
+        {/* </Link> */}
         <MenuItem>
           <ContentCopy fontSize='small' sx={{ mr: 2 }} />
           Duplicate
@@ -175,9 +175,9 @@ const defaultColumns = [
     minWidth: 80,
     headerName: 'Invoice',
     renderCell: ({ row }: CellType) => (
-      <Link href={`/manage/order/preview/${row.id}`} passHref>
+      // <Link href={`/manage/order/preview/${row.id}`} passHref>
         <StyledLink>{`${row.id}`}</StyledLink>
-      </Link>
+      // </Link>
     )
   },
 
@@ -247,13 +247,13 @@ const defaultColumns = [
     }
   },
 
-  /* {
-    flex: 0.1,
-    minWidth: 90,
+  {
+    flex: 0.25,
+    minWidth: 200,
     field: 'total',
-    headerName: 'Total',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>{`$${row.total || 0}`}</Typography>
-  }, */
+    headerName: 'Product',
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.service}</Typography>
+  },
   {
     flex: 0.15,
     minWidth: 125,
@@ -265,7 +265,7 @@ const defaultColumns = [
     flex: 0.1,
     minWidth: 90,
     field: 'balance',
-    headerName: 'Balance',
+    headerName: 'Status',
     renderCell: ({ row }: CellType) => {
       return row.balance !== 0 ? (
         <Typography variant='body2' sx={{ color: 'text.primary' }}>
@@ -351,11 +351,11 @@ const OrderList = () => {
           </Tooltip>
           <Tooltip title='View'>
             <Box>
-              <Link href={`/manage/order/preview/${row.id}`} passHref>
+              {/* <Link href={`/manage/order/preview/${row.id}`} passHref> */}
                 <IconButton size='small' component='a' sx={{ textDecoration: 'none', mr: 0.5 }}>
                   <EyeOutline />
                 </IconButton>
-              </Link>
+              {/* </Link> */}
             </Box>
           </Tooltip>
           <RowOptions id={row.id} />
@@ -383,12 +383,12 @@ const OrderList = () => {
                     onChange={handleStatusValue}
                     labelId='order-status-select'
                   >
-                    <MenuItem value=''>none</MenuItem>
-                    <MenuItem value='downloaded'>Downloaded</MenuItem>
-                    <MenuItem value='draft'>Draft</MenuItem>
+                    <MenuItem value=''>All</MenuItem>
+                    <MenuItem value='downloaded'>Pending</MenuItem>
+                    <MenuItem value='draft'>Refunded</MenuItem>
                     <MenuItem value='paid'>Paid</MenuItem>
                     <MenuItem value='past due'>Past Due</MenuItem>
-                    <MenuItem value='partial payment'>Partial Payment</MenuItem>
+                    <MenuItem value='partial payment'>Canceled</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

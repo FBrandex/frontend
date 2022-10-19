@@ -25,6 +25,7 @@ import UserViewNotification from 'src/views/manage/user/view/UserViewNotificatio
 
 // ** Types
 import { OrderType } from 'src/types/manage/orderTypes'
+import { Finance, ThumbsUpDownOutline, BullseyeArrow } from 'mdi-material-ui'
 
 interface Props {
   orderData: OrderType[]
@@ -57,28 +58,29 @@ const UserViewRight = ({ orderData }: Props) => {
         aria-label='forced scroll tabs example'
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
-        <Tab value='overview' label='Overview' icon={<AccountOutline sx={{ fontSize: '18px' }} />} />
-        <Tab value='security' label='Security' icon={<LockOutline sx={{ fontSize: '18px' }} />} />
-        <Tab value='billing-plan' label='Billing & Plan' icon={<BookmarkOutline sx={{ fontSize: '18px' }} />} />
-        <Tab value='notification' label='Notification' icon={<BellOutline sx={{ fontSize: '18px' }} />} />
-        <Tab value='connection' label='Connection' icon={<LinkVariant sx={{ fontSize: '18px' }} />} />
+        <Tab value='overview' label='Challenges' icon={<BullseyeArrow sx={{ fontSize: '18px' }} />} />
+        <Tab value='notification' label='Funded Accounts' icon={<Finance sx={{ fontSize: '18px' }} />} />
+        <Tab value='billing-plan' label='Other Products' icon={<BookmarkOutline sx={{ fontSize: '18px' }} />} />
+        <Tab value='security' label='User Data' icon={<AccountOutline sx={{ fontSize: '18px' }} />} />
+        {/* <Tab value='notification' label='Notification' icon={<BellOutline sx={{ fontSize: '18px' }} />} />
+        <Tab value='connection' label='Connection' icon={<LinkVariant sx={{ fontSize: '18px' }} />} /> */}
       </TabList>
       <Box sx={{ mt: 3 }}>
         <TabPanel sx={{ p: 0 }} value='overview'>
           <UserViewOverview orderData={orderData} />
         </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='notification'>
+          <UserViewNotification orderData={orderData} />
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='billing-plan'>
+          <UserViewBilling orderData={orderData} />
+        </TabPanel>
         <TabPanel sx={{ p: 0 }} value='security'>
           <UserViewSecurity />
         </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='billing-plan'>
-          <UserViewBilling />
-        </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='notification'>
-          <UserViewNotification />
-        </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='connection'>
+        {/* <TabPanel sx={{ p: 0 }} value='connection'>
           <UserViewConnection />
-        </TabPanel>
+        </TabPanel> */}
       </Box>
     </TabContext>
   )

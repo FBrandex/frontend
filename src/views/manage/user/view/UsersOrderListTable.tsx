@@ -20,15 +20,16 @@ import Typography from '@mui/material/Typography'
 // ** Icons Imports
 import Send from 'mdi-material-ui/Send'
 import Check from 'mdi-material-ui/Check'
+import StarOutline from 'mdi-material-ui/StarOutline'
 import ArrowUp from 'mdi-material-ui/ArrowUp'
 import ChartPie from 'mdi-material-ui/ChartPie'
-import Download from 'mdi-material-ui/Download'
+import ClockOutline from 'mdi-material-ui/ClockOutline'
 import ArrowDown from 'mdi-material-ui/ArrowDown'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+import Cancel from 'mdi-material-ui/Cancel'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
 import DotsVertical from 'mdi-material-ui/DotsVertical'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+import Power from 'mdi-material-ui/Power'
 import PencilOutline from 'mdi-material-ui/PencilOutline'
 import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
@@ -101,9 +102,9 @@ const RowOptions = ({ id }: { id: number | string }) => {
           horizontal: 'right'
         }}
       >
-        <MenuItem>
-          <Download fontSize='small' sx={{ mr: 2 }} />
-          Download
+        {/* <MenuItem>
+          <Update fontSize='small' sx={{ mr: 2 }} />
+          Change Status
         </MenuItem>
         <Link href={`/manage/order/edit/${id}`} passHref>
           <MenuItem>
@@ -114,6 +115,26 @@ const RowOptions = ({ id }: { id: number | string }) => {
         <MenuItem>
           <ContentCopy fontSize='small' sx={{ mr: 2 }} />
           Duplicate
+        </MenuItem> */}
+        <MenuItem>
+          <StarOutline fontSize='small' sx={{ mr: 2 }} />
+          Produto Adquirido
+        </MenuItem>
+        <MenuItem>
+          <ClockOutline fontSize='small' sx={{ mr: 2 }} />
+          Aguardando Plataforma
+        </MenuItem>
+        <MenuItem>
+          <Power fontSize='small' sx={{ mr: 2 }} />
+          Conta Habilitada
+        </MenuItem>
+        <MenuItem>
+          <Cancel fontSize='small' sx={{ mr: 2 }} />
+          Cancelado
+        </MenuItem>
+        <MenuItem>
+          <Check fontSize='small' sx={{ mr: 2 }} />
+          Aprovado Exame
         </MenuItem>
       </Menu>
     </>
@@ -125,18 +146,47 @@ const columns = [
     flex: 0.2,
     field: 'id',
     minWidth: 90,
-    headerName: '# ID',
+    headerName: 'ID',
     renderCell: ({ row }: CellType) => (
-      <Link href={`/manage/order/preview/${row.id}`} passHref>
+      // <Link href={`/manage/order/preview/${row.id}`} passHref>
         <StyledLink>{`#${row.id}`}</StyledLink>
-      </Link>
+      // </Link>
     )
+  },
+  {
+    flex: 0.3,
+    minWidth: 125,
+    field: 'service',
+    headerName: 'Challenge',
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.service}</Typography>
+  },
+  /* {
+    flex: 0.25,
+    minWidth: 90,
+    field: 'total',
+    headerName: 'Total',
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
+  }, */
+  {
+    flex: 0.25,
+    minWidth: 90,
+    field: 'issuedDate',
+    headerName: 'Start Date',
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
+  },
+  {
+    flex: 0.25,
+    minWidth: 90,
+    field: 'dueDate',
+    headerName: 'Due Date',
+    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.dueDate}</Typography>
   },
   {
     flex: 0.15,
     minWidth: 80,
     field: 'orderStatus',
-    renderHeader: () => <ArrowUp fontSize='small' sx={{ color: 'action.active' }} />,
+    // renderHeader: () => <ArrowUp fontSize='small' sx={{ color: 'action.active' }} />,
+    headerName: 'Status',
     renderCell: ({ row }: CellType) => {
       const { dueDate, balance, orderStatus } = row
 
@@ -171,20 +221,6 @@ const columns = [
     }
   },
   {
-    flex: 0.25,
-    minWidth: 90,
-    field: 'total',
-    headerName: 'Total',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>${row.total || 0}</Typography>
-  },
-  {
-    flex: 0.3,
-    minWidth: 125,
-    field: 'issuedDate',
-    headerName: 'Issued Date',
-    renderCell: ({ row }: CellType) => <Typography variant='body2'>{row.issuedDate}</Typography>
-  },
-  {
     flex: 0.1,
     minWidth: 130,
     sortable: false,
@@ -192,7 +228,7 @@ const columns = [
     headerName: 'Actions',
     renderCell: ({ row }: CellType) => (
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Tooltip title='Delete Order'>
+        {/* <Tooltip title='Delete Order'>
           <IconButton size='small'>
             <DeleteOutline />
           </IconButton>
@@ -205,6 +241,16 @@ const columns = [
               </IconButton>
             </Link>
           </Box>
+        </Tooltip> */}
+        <Tooltip title='View'>
+          <IconButton size='small'>
+            <EyeOutline />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title='Cancel'>
+          <IconButton size='small'>
+            <Cancel />
+          </IconButton>
         </Tooltip>
         <RowOptions id={row.id} />
       </Box>
@@ -229,7 +275,7 @@ const OrderListTable = ({ orderData }: Props) => {
 
   return (
     <Card>
-      <CardHeader
+      {/* <CardHeader
         title='Order List'
         sx={{ '& .MuiCardHeader-action': { m: 0 } }}
         titleTypographyProps={{
@@ -255,7 +301,7 @@ const OrderListTable = ({ orderData }: Props) => {
             </Menu>
           </>
         }
-      />
+      /> */}
       <DataGrid
         autoHeight
         columns={columns}

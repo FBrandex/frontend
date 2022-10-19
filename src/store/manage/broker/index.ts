@@ -17,43 +17,43 @@ interface Redux {
   dispatch: Dispatch<any>
 }
 
-// ** Fetch Users
-export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: DataParams) => {
-  const response = await axios.get('/manage/user/list', {
+// ** Fetch Brokers
+export const fetchData = createAsyncThunk('appBrokers/fetchData', async (params: DataParams) => {
+  const response = await axios.get('/manage/broker/list', {
     params
   })
 
   return response.data
 })
 
-// ** Add User
-export const addUser = createAsyncThunk(
-  'appUsers/addUser',
+// ** Add Broker
+export const addBroker = createAsyncThunk(
+  'appBrokers/addBroker',
   async (data: { [key: string]: number | string }, { getState, dispatch }: Redux) => {
-    const response = await axios.post('/manage/user/add-user', {
+    const response = await axios.post('/manage/broker/add-broker', {
       data
     })
-    dispatch(fetchData(getState().user.params))
+    dispatch(fetchData(getState().broker.params))
 
     return response.data
   }
 )
 
-// ** Delete User
-export const deleteUser = createAsyncThunk(
-  'appUsers/deleteUser',
+// ** Delete Broker
+export const deleteBroker = createAsyncThunk(
+  'appBrokers/deleteBroker',
   async (id: number | string, { getState, dispatch }: Redux) => {
-    const response = await axios.delete('/manage/user/delete', {
+    const response = await axios.delete('/manage/broker/delete', {
       data: id
     })
-    dispatch(fetchData(getState().user.params))
+    dispatch(fetchData(getState().broker.params))
 
     return response.data
   }
 )
 
-export const appUsersSlice = createSlice({
-  name: 'appUsers',
+export const appBrokersSlice = createSlice({
+  name: 'appBrokers',
   initialState: {
     data: [],
     total: 1,
@@ -63,7 +63,7 @@ export const appUsersSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
-      state.data = action.payload.users
+      state.data = action.payload.brokers
       state.total = action.payload.total
       state.params = action.payload.params
       state.allData = action.payload.allData
@@ -71,4 +71,4 @@ export const appUsersSlice = createSlice({
   }
 })
 
-export default appUsersSlice.reducer
+export default appBrokersSlice.reducer

@@ -419,6 +419,7 @@ const UserList = () => {
           </CardContent>
         </Card>
       </Grid>
+      
       <Grid item xs={12}>
         <Card>
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />

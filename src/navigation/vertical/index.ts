@@ -107,7 +107,7 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      title: 'Real Account',
+      title: 'Funded Account',
       icon: Finance,
       children: [
         {

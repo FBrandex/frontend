@@ -15,7 +15,7 @@ const UserView = ({ id, orderData }: InferGetStaticPropsType<typeof getStaticPro
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get('/manage/users/list')
+  const res = await axios.get('/manage/user/list')
   const userDate: OrderType[] = await res.data.allData
 
   const paths = userDate.map((item: OrderType) => ({

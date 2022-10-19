@@ -2,13 +2,12 @@
 import { Fragment } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
+/* import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Table from '@mui/material/Table'
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
 import TableRow from '@mui/material/TableRow'
-import { styled } from '@mui/material/styles'
 import TimelineDot from '@mui/lab/TimelineDot'
 import TableHead from '@mui/material/TableHead'
 import TableBody from '@mui/material/TableBody'
@@ -22,11 +21,12 @@ import TimelineContent from '@mui/lab/TimelineContent'
 import TableContainer from '@mui/material/TableContainer'
 import LinearProgress from '@mui/material/LinearProgress'
 import TimelineSeparator from '@mui/lab/TimelineSeparator'
-import TimelineConnector from '@mui/lab/TimelineConnector'
+import TimelineConnector from '@mui/lab/TimelineConnector' */
+import { styled } from '@mui/material/styles'
 import MuiTimeline, { TimelineProps } from '@mui/lab/Timeline'
 
 // ** Types
-import { ThemeColor } from 'src/@core/layouts/types'
+// import { ThemeColor } from 'src/@core/layouts/types'
 import { OrderType } from 'src/types/manage/orderTypes'
 
 // ** Demo Component Imports
@@ -36,7 +36,7 @@ interface Props {
   orderData: OrderType[]
 }
 
-interface ProjectListDataType {
+/* interface ProjectListDataType {
   img: string
   hours: string
   totalTask: string
@@ -110,7 +110,7 @@ const projectListDate: ProjectListDataType[] = [
     projectTitle: 'Hoffman Website',
     img: '/images/icons/project-icons/html5.png'
   }
-]
+] */
 
 // Styled Timeline component
 const Timeline = styled(MuiTimeline)<TimelineProps>(({ theme }) => ({
@@ -138,7 +138,7 @@ const Img = styled('img')(({ theme }) => ({
 const UserViewOverview = ({ orderData }: Props) => {
   return (
     <Fragment>
-      <Card sx={{ mb: 6 }}>
+      {/* <Card sx={{ mb: 6 }}>
         <CardHeader title='Project List' titleTypographyProps={{ variant: 'h6' }} />
 
         <Divider sx={{ m: 0 }} />
@@ -324,7 +324,7 @@ const UserViewOverview = ({ orderData }: Props) => {
             </TimelineItem>
           </Timeline>
         </CardContent>
-      </Card>
+      </Card> */}
 
       <UsersOrderListTable orderData={orderData} />
     </Fragment>

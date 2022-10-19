@@ -17,43 +17,43 @@ interface Redux {
   dispatch: Dispatch<any>
 }
 
-// ** Fetch Users
-export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: DataParams) => {
-  const response = await axios.get('/manage/user/list', {
+// ** Fetch Products
+export const fetchData = createAsyncThunk('appProducts/fetchData', async (params: DataParams) => {
+  const response = await axios.get('/manage/product/list', {
     params
   })
 
   return response.data
 })
 
-// ** Add User
-export const addUser = createAsyncThunk(
-  'appUsers/addUser',
+// ** Add Product
+export const addProduct = createAsyncThunk(
+  'appProducts/addProduct',
   async (data: { [key: string]: number | string }, { getState, dispatch }: Redux) => {
-    const response = await axios.post('/manage/user/add-user', {
+    const response = await axios.post('/manage/product/add-product', {
       data
     })
-    dispatch(fetchData(getState().user.params))
+    dispatch(fetchData(getState().product.params))
 
     return response.data
   }
 )
 
-// ** Delete User
-export const deleteUser = createAsyncThunk(
-  'appUsers/deleteUser',
+// ** Delete Product
+export const deleteProduct = createAsyncThunk(
+  'appProducts/deleteProduct',
   async (id: number | string, { getState, dispatch }: Redux) => {
-    const response = await axios.delete('/manage/user/delete', {
+    const response = await axios.delete('/manage/product/delete', {
       data: id
     })
-    dispatch(fetchData(getState().user.params))
+    dispatch(fetchData(getState().product.params))
 
     return response.data
   }
 )
 
-export const appUsersSlice = createSlice({
-  name: 'appUsers',
+export const appProductsSlice = createSlice({
+  name: 'appProducts',
   initialState: {
     data: [],
     total: 1,
@@ -63,7 +63,7 @@ export const appUsersSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
-      state.data = action.payload.users
+      state.data = action.payload.products
       state.total = action.payload.total
       state.params = action.payload.params
       state.allData = action.payload.allData
@@ -71,4 +71,4 @@ export const appUsersSlice = createSlice({
   }
 })
 
-export default appUsersSlice.reducer
+export default appProductsSlice.reducer

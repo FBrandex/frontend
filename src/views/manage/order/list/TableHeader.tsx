@@ -55,11 +55,11 @@ const TableHeader = (props: TableHeaderProps) => {
           onChange={e => handleFilter(e.target.value)}
         />
 
-        <Link href='/manage/order/add' passHref>
+        {/* <Link href='/manage/order/add' passHref> */}
           <Button sx={{ mb: 2 }} variant='contained'>
             Add Order
           </Button>
-        </Link>
+        {/* </Link> */}
       </Box>
     </Box>
   )

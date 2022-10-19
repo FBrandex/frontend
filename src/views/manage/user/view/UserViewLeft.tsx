@@ -43,7 +43,7 @@ import { UsersType } from 'src/types/manage/userTypes'
 import { getInitials } from 'src/@core/utils/get-initials'
 
 interface Props {
-  data: UsersType
+  userData: UsersType
 }
 
 interface ColorsType {
@@ -80,7 +80,7 @@ const statusColors: ColorsType = {
   inactive: 'secondary'
 }
 
-const UserViewLeft = ({ data }: Props) => {
+const UserViewLeft = ({ userData }: Props) => {
   // ** States
   const [openEdit, setOpenEdit] = useState<boolean>(false)
   const [openPlans, setOpenPlans] = useState<boolean>(false)
@@ -90,24 +90,24 @@ const UserViewLeft = ({ data }: Props) => {
   const handleEditClose = () => setOpenEdit(false)
 
   // Handle Upgrade Plan dialog
-  const handlePlansClickOpen = () => setOpenPlans(true)
-  const handlePlansClose = () => setOpenPlans(false)
+/*   const handlePlansClickOpen = () => setOpenPlans(true)
+  const handlePlansClose = () => setOpenPlans(false) */
 
   const renderUserAvatar = () => {
-    if (data) {
-      if (data.avatar.length) {
+    if (userData) {
+      if (userData.avatar.length) {
         return (
-          <CustomAvatar alt='User Image' src={data.avatar} variant='rounded' sx={{ width: 120, height: 120, mb: 4 }} />
+          <CustomAvatar alt='User Image' src={userData.avatar} variant='rounded' sx={{ width: 120, height: 120, mb: 4 }} />
         )
       } else {
         return (
           <CustomAvatar
             skin='light'
             variant='rounded'
-            color={data.avatarColor as ThemeColor}
+            color={userData.avatarColor as ThemeColor}
             sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
           >
-            {getInitials(data.fullName)}
+            {getInitials(userData.fullName)}
           </CustomAvatar>
         )
       }
@@ -116,7 +116,7 @@ const UserViewLeft = ({ data }: Props) => {
     }
   }
 
-  if (data) {
+  if (userData) {
     return (
       <Grid container spacing={6}>
         <Grid item xs={12}>
@@ -124,13 +124,13 @@ const UserViewLeft = ({ data }: Props) => {
             <CardContent sx={{ pt: 15, display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               {renderUserAvatar()}
               <Typography variant='h6' sx={{ mb: 4 }}>
-                {data.fullName}
+                {userData.fullName}
               </Typography>
               <CustomChip
                 skin='light'
                 size='small'
-                label={data.role}
-                color={roleColors[data.role]}
+                label={userData.role}
+                color={roleColors[userData.role]}
                 sx={{
                   borderRadius: '4px',
                   fontSize: '0.875rem',
@@ -175,13 +175,13 @@ const UserViewLeft = ({ data }: Props) => {
                   <Typography variant='subtitle2' sx={{ mr: 2, color: 'text.primary' }}>
                     Username:
                   </Typography>
-                  <Typography variant='body2'>@{data.username}</Typography>
+                  <Typography variant='body2'>@{userData.username}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography variant='subtitle2' sx={{ mr: 2, color: 'text.primary' }}>
                     Billing Email:
                   </Typography>
-                  <Typography variant='body2'>{data.email}</Typography>
+                  <Typography variant='body2'>{userData.email}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography variant='subtitle2' sx={{ mr: 2, color: 'text.primary' }}>
@@ -190,8 +190,8 @@ const UserViewLeft = ({ data }: Props) => {
                   <CustomChip
                     skin='light'
                     size='small'
-                    label={data.status}
-                    color={statusColors[data.status]}
+                    label={userData.status}
+                    color={statusColors[userData.status]}
                     sx={{
                       height: 20,
                       fontSize: '0.75rem',
@@ -204,7 +204,7 @@ const UserViewLeft = ({ data }: Props) => {
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Role:</Typography>
                   <Typography variant='body2' sx={{ textTransform: 'capitalize' }}>
-                    {data.role}
+                    {userData.role}
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
@@ -213,7 +213,7 @@ const UserViewLeft = ({ data }: Props) => {
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
-                  <Typography variant='body2'>+1 {data.cellphone}</Typography>
+                  <Typography variant='body2'>+1 {userData.cellphone}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2.7 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
@@ -221,7 +221,7 @@ const UserViewLeft = ({ data }: Props) => {
                 </Box>
                 <Box sx={{ display: 'flex' }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Country:</Typography>
-                  <Typography variant='body2'>{data.country}</Typography>
+                  <Typography variant='body2'>{userData.country}</Typography>
                 </Box>
               </Box>
             </CardContent>
@@ -252,25 +252,25 @@ const UserViewLeft = ({ data }: Props) => {
                 <form>
                   <Grid container spacing={6}>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth label='Full Name' defaultValue={data.fullName} />
+                      <TextField fullWidth label='Full Name' defaultValue={userData.fullName} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
                         label='Username'
-                        defaultValue={data.username}
+                        defaultValue={userData.username}
                         InputProps={{ startAdornment: <InputAdornment position='start'>@</InputAdornment> }}
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth type='email' label='Billing Email' defaultValue={data.email} />
+                      <TextField fullWidth type='email' label='Billing Email' defaultValue={userData.email} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
                         <InputLabel id='user-view-status-label'>Status</InputLabel>
                         <Select
                           label='Status'
-                          defaultValue={data.status}
+                          defaultValue={userData.status}
                           id='user-view-status'
                           labelId='user-view-status-label'
                         >
@@ -284,7 +284,7 @@ const UserViewLeft = ({ data }: Props) => {
                       <TextField fullWidth label='TAX ID' defaultValue='Tax-8894' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth label='Contact' defaultValue={`+1 ${data.cellphone}`} />
+                      <TextField fullWidth label='Contact' defaultValue={`+1 ${userData.cellphone}`} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
@@ -344,7 +344,7 @@ const UserViewLeft = ({ data }: Props) => {
           </Card>
         </Grid>
 
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Card sx={{ boxShadow: 'none', border: theme => `2px solid ${theme.palette.primary.main}` }}>
             <CardContent
               sx={{ display: 'flex', flexWrap: 'wrap', pb: '0 !important', justifyContent: 'space-between' }}
@@ -493,7 +493,7 @@ const UserViewLeft = ({ data }: Props) => {
               </DialogContent>
             </Dialog>
           </Card>
-        </Grid>
+        </Grid> */}
       </Grid>
     )
   } else {
