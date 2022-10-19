@@ -92,7 +92,7 @@ const StyledLink = styled('a')(({ theme }) => ({
 
 // const RowOptions = ({ id }: { id: number | string }) => {
 
-const RowOptions = () => {
+const RowOptions = ({}: { id: number | string }) => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
