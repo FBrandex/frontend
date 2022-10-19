@@ -92,7 +92,7 @@ const StyledLink = styled('a')(({ theme }) => ({
 
 // const RowOptions = ({ id }: { id: number | string }) => {
 
-const RowOptions = ({}: { id: number | string }) => {
+const RowOptions = () => {
   // ** State
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -181,6 +181,7 @@ const defaultColumns = [
 
       // <Link href={`/manage/order/preview/${row.id}`} passHref>
       <StyledLink>{`${row.id}`}</StyledLink>
+      
       // </Link>
     )
   },
