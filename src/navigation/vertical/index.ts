@@ -74,35 +74,35 @@ const navigation = (): VerticalNavItemsType => {
       children: [
         {
           title: 'List',
-          path: '/test-account/list',
+          path: '/challenge/list',
         },
         {
           title: 'Enable',
-          path: '/test-account/enable',
+          path: '/challenge/enable',
         },
         {
           title: 'Disable',
-          path: '/test-account/disable',
+          path: '/challenge/disable',
         },
         {
           title: 'Reset',
-          path: '/test-account/reset',
+          path: '/challenge/reset',
         },
         {
           title: 'Restart',
-          path: '/test-account/restart',
+          path: '/challenge/restart',
         },
         {
           title: 'Performance Management',
-          path: '/test-account/performance',
+          path: '/challenge/performance',
         },
         {
           title: 'Achieved Goal',
-          path: '/test-account/approved',
+          path: '/challenge/approved',
         },
         {
           title: 'Expired',
-          path: '/test-account/expired',
+          path: '/challenge/expired',
         },
       ]
     },
@@ -166,12 +166,16 @@ const navigation = (): VerticalNavItemsType => {
               title: 'Assignments',
               path: '/setting/permissions',
             },
-            {
-              title: 'SMTP',
-              path: '/setting/smtp',
-            },
           ]
         },
+        {
+          title: 'SMTP',
+          path: '/setting/smtp',
+        },
+        {
+          title: 'Parameters',
+          path: '/setting/parameters',
+        }
       ],
     },
     /* {

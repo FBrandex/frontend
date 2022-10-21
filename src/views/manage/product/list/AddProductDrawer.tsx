@@ -35,8 +35,20 @@ interface SidebarAddProductType {
 
 interface ProductData {
   title: string
-  email: string
-  account: number
+  previousPrice: string
+  currentPrice: string
+  productGroup: string
+  platform: string
+  market: string
+  drawdown: string
+  code: string
+  url: string
+  recurrent: string
+  brokerId: string
+  trainingDate: string
+  trainingStartTime: string
+  trainingEndTime: string
+
 }
 
 const showErrors = (field: string, valueLen: number, min: number) => {
@@ -62,21 +74,26 @@ const schema = yup.object().shape({
     .string()
     .min(3, obj => showErrors('Title', obj.value.length, obj.min))
     .required(),
-  email: yup
+  productGroup: yup
     .string()
-    .email()
-    .required(),
-  account: yup
-    .number()
-    .typeError('Enter numbers only')
-    .min(3, obj => showErrors('Contact Number', obj.value.length, obj.min))
     .required()
 })
 
 const defaultValues = {
-  email: '',
-  account: '',
-  title: ''
+  title: '',
+  previousPrice: '',
+  currentPrice: '',
+  productGroup: '',
+  platform: '',
+  market: '',
+  drawdown: '',
+  code: '',
+  url: '',
+  recurrent: '',
+  brokerId: '',
+  trainingDate: '',
+  trainingStartTime: '',
+  trainingEndTime: ''
 }
 
 const SidebarAddProduct = (props: SidebarAddProductType) => {
@@ -104,7 +121,6 @@ const SidebarAddProduct = (props: SidebarAddProductType) => {
   }
 
   const handleClose = () => {
-    setValue('account', '')
     toggle()
     reset()
   }
@@ -145,39 +161,236 @@ const SidebarAddProduct = (props: SidebarAddProductType) => {
 
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller
-              name='email'
+              name='previousPrice'
               control={control}
               rules={{ required: true }}
               render={({ field: { value, onChange } }) => (
                 <TextField
-                  type='email'
                   value={value}
-                  label='E-mail'
+                  label='Previous Price'
                   onChange={onChange}
-                  placeholder='info@product.com'
-                  error={Boolean(errors.email)}
+                  placeholder='R$ 999,99'
+                  error={Boolean(errors.previousPrice)}
                 />
               )}
             />
-            {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
+            {errors.previousPrice && <FormHelperText sx={{ color: 'error.main' }}>{errors.previousPrice.message}</FormHelperText>}
           </FormControl>
 
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller
-              name='account'
+              name='currentPrice'
               control={control}
               rules={{ required: true }}
               render={({ field: { value, onChange } }) => (
                 <TextField
                   value={value}
-                  label='Account Number'
+                  label='Current Price'
                   onChange={onChange}
-                  placeholder='987654'
-                  error={Boolean(errors.account)}
+                  placeholder='R$ 899,99'
+                  error={Boolean(errors.currentPrice)}
                 />
               )}
             />
-            {errors.account && <FormHelperText sx={{ color: 'error.main' }}>{errors.account.message}</FormHelperText>}
+            {errors.currentPrice && <FormHelperText sx={{ color: 'error.main' }}>{errors.currentPrice.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='productGroup'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Product Group'
+                  onChange={onChange}
+                  placeholder='Category'
+                  error={Boolean(errors.productGroup)}
+                />
+              )}
+            />
+            {errors.productGroup && <FormHelperText sx={{ color: 'error.main' }}>{errors.productGroup.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='platform'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Platform'
+                  onChange={onChange}
+                  placeholder='Profit Plus'
+                  error={Boolean(errors.platform)}
+                />
+              )}
+            />
+            {errors.platform && <FormHelperText sx={{ color: 'error.main' }}>{errors.platform.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='market'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Market'
+                  onChange={onChange}
+                  placeholder='Stocks'
+                  error={Boolean(errors.market)}
+                />
+              )}
+            />
+            {errors.market && <FormHelperText sx={{ color: 'error.main' }}>{errors.market.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='drawdown'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Drawdown'
+                  onChange={onChange}
+                  placeholder='R$ 10.000,00'
+                  error={Boolean(errors.drawdown)}
+                />
+              )}
+            />
+            {errors.drawdown && <FormHelperText sx={{ color: 'error.main' }}>{errors.drawdown.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='code'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Product Code'
+                  onChange={onChange}
+                  placeholder='359688'
+                  error={Boolean(errors.code)}
+                />
+              )}
+            />
+            {errors.code && <FormHelperText sx={{ color: 'error.main' }}>{errors.code.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='url'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Product Url'
+                  onChange={onChange}
+                  placeholder='https://sun.eduzz.com/359688'
+                  error={Boolean(errors.url)}
+                />
+              )}
+            />
+            {errors.url && <FormHelperText sx={{ color: 'error.main' }}>{errors.url.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='recurrent'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Recurrent'
+                  onChange={onChange}
+                  placeholder='Yes'
+                  error={Boolean(errors.recurrent)}
+                />
+              )}
+            />
+            {errors.recurrent && <FormHelperText sx={{ color: 'error.main' }}>{errors.recurrent.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='brokerId'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Broker Id'
+                  onChange={onChange}
+                  placeholder='2'
+                  error={Boolean(errors.brokerId)}
+                />
+              )}
+            />
+            {errors.brokerId && <FormHelperText sx={{ color: 'error.main' }}>{errors.brokerId.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='trainingDate'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Training Date'
+                  onChange={onChange}
+                  placeholder='01/08/2022'
+                  error={Boolean(errors.trainingDate)}
+                />
+              )}
+            />
+            {errors.trainingDate && <FormHelperText sx={{ color: 'error.main' }}>{errors.trainingDate.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='trainingStartTime'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='Training Start Time'
+                  onChange={onChange}
+                  placeholder='18:00'
+                  error={Boolean(errors.trainingStartTime)}
+                />
+              )}
+            />
+            {errors.trainingStartTime && <FormHelperText sx={{ color: 'error.main' }}>{errors.trainingStartTime.message}</FormHelperText>}
+          </FormControl>
+
+          <FormControl fullWidth sx={{ mb: 6 }}>
+            <Controller
+              name='trainingEndTime'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { value, onChange } }) => (
+                <TextField
+                  value={value}
+                  label='trainingEndTime'
+                  onChange={onChange}
+                  placeholder='19:30'
+                  error={Boolean(errors.trainingEndTime)}
+                />
+              )}
+            />
+            {errors.trainingEndTime && <FormHelperText sx={{ color: 'error.main' }}>{errors.trainingEndTime.message}</FormHelperText>}
           </FormControl>
 
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

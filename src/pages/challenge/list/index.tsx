@@ -11,15 +11,33 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 
 // ** Custom Components Imports
+import CustomChip from 'src/@core/components/mui/chip'
 import PageHeader from 'src/@core/components/page-header'
-import TableHeader from 'src/views/manage/email/list/TableHeader'
-import AddEmailDrawer from 'src/views/manage/email/list/AddEmailDrawer'
+import TableHeader from 'src/views/challenge/list/TableHeader'
 
 // ** Data Import
-import { rows } from 'src/@fake-db/manage/emailList'
+import { rows } from 'src/@fake-db/challenge/list'
 
 // ** Icons Imports
 import PencilOutline from 'mdi-material-ui/PencilOutline'
+
+// ** Types Imports
+import { ThemeColor } from 'src/@core/layouts/types'
+
+interface StatusObj {
+  [key: number]: {
+    title: string
+    color: ThemeColor
+  }
+}
+
+const statusObj: StatusObj = {
+  1: { title: 'Primary', color: 'primary' },
+  2: { title: 'Active', color: 'success' },
+  3: { title: 'Canceled', color: 'error' },
+  4: { title: 'Waiting Platform', color: 'warning' },
+  5: { title: 'New Challenge', color: 'info' }
+}
 
 const columns = [
   {
@@ -31,26 +49,61 @@ const columns = [
   {
     flex: 0.1,
     minWidth: 90,
+    field: 'orderId',
+    headerName: 'Order'
+  },
+  {
+    flex: 0.2,
+    minWidth: 200,
     field: 'title',
-    headerName: 'Title'
+    headerName: 'Challenge'
+  },
+  {
+    flex: 0.1,
+    minWidth: 90,
+    editable: true,
+    field: 'startDate',
+    headerName: 'Start Date'
+  },
+  {
+    flex: 0.1,
+    minWidth: 90,
+    editable: true,
+    field: 'dueDate',
+    headerName: 'Due Date'
+  },
+  {
+    flex: 0.1,
+    minWidth: 90,
+    editable: true,
+    field: 'cancelDate',
+    headerName: 'Cancel Date'
+  },
+  {
+    flex: 0.2,
+    minWidth: 200,
+    field: 'client',
+    headerName: 'Cliente Name'
   },
   {
     flex: 0.15,
-    minWidth: 200,
-    field: 'description',
-    headerName: 'Description'
-  },
-  {
-    flex: 0.05,
-    minWidth: 100,
-    field: 'recipient',
-    headerName: 'Recipient'
-  },
-  {
-    flex: 0.25,
-    minWidth: 230,
-    field: 'content',
-    headerName: 'Content'
+    minWidth: 90,
+    editable: true,
+    field: 'status',
+    headerName: 'Status',
+    renderCell: () => {
+      const status = statusObj[5]
+
+      return (
+        <CustomChip
+          size='small'
+          skin='light'
+          color={status.color}
+          label={status.title}
+          sx={{ '& .MuiChip-label': { textTransform: 'capitalize' } }}
+        />
+      )
+    }
   },
   {
     flex: 0.05,
@@ -70,17 +123,14 @@ const columns = [
   }
 ]
 
-const EmailList = () => {
+const ChallengeList = () => {
 
   const [value, setValue] = useState<string>('')
   const [pageSize, setPageSize] = useState<number>(10)
-  const [addEmailOpen, setAddEmailOpen] = useState<boolean>(false)
 
   const handleFilter = useCallback((val: string) => {
     setValue(val)
   }, [])
-
-  const toggleAddEmailDrawer = () => setAddEmailOpen(!addEmailOpen)
 
   return (
     <Grid container spacing={6}>
@@ -88,7 +138,7 @@ const EmailList = () => {
       <PageHeader
         title={
           <Typography variant='h6'>
-            Emails
+            Challenges
           </Typography>
         }
       />
@@ -96,7 +146,7 @@ const EmailList = () => {
       <Grid item xs={12}>
         <Card>
           <Box >
-            <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddEmailDrawer} />
+            <TableHeader value={value} handleFilter={handleFilter} />
             <DataGrid
               autoHeight
               columns={columns}
@@ -111,10 +161,8 @@ const EmailList = () => {
         </Card>
       </Grid>
 
-      <AddEmailDrawer open={addEmailOpen} toggle={toggleAddEmailDrawer} />
-
     </Grid>
   )
 }
 
-export default EmailList
+export default ChallengeList
