@@ -10,7 +10,7 @@ const ParametersConfig = () => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Configuração SMTP'></CardHeader>
+          <CardHeader title='Parametrização'></CardHeader>
           <CardContent>
             <Typography>
               Configurar parametrização, para flexibilização de API.
