@@ -107,7 +107,8 @@ const storeSettings = (settings: Settings) => {
   delete initSettings.navHidden
   delete initSettings.lastLayout
   delete initSettings.toastPosition
-  window.localStorage.setItem('settings', JSON.stringify(initSettings))
+  
+  // window.localStorage.setItem('settings', JSON.stringify(initSettings))
 }
 
 // ** Create Context
