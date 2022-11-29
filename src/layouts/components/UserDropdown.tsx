@@ -29,8 +29,7 @@ import { useAuth } from 'src/hooks/useAuth'
 
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'
-
-//import { useGridApiEventHandler } from '@mui/x-data-grid'
+import { useGridApiEventHandler } from '@mui/x-data-grid'
 
 
 interface Props {
@@ -110,7 +109,7 @@ const UserDropdown = (props: Props) => {
           alt='Fulano de Tal'
           onClick={handleDropdownOpen}
           sx={{ width: 40, height: 40 }}
-          src={user?.avatar?.toString()}
+          src={user?.avatar}
         />
       </Badge>
       <Menu
@@ -139,7 +138,7 @@ const UserDropdown = (props: Props) => {
             >
               <Avatar
                 alt='avatar'
-                src={user?.avatar?.toString()}
+                src={user?.avatar}
                 sx={{ width: '2.5rem', height: '2.5rem' }}
               />
             </Badge>
