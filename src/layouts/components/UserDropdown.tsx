@@ -138,7 +138,7 @@ const UserDropdown = (props: Props) => {
             >
               <Avatar
                 alt='avatar'
-                src={user?.avatar.toString()}
+                src={user?.avatar?.toString()}
                 sx={{ width: '2.5rem', height: '2.5rem' }}
               />
             </Badge>
