@@ -109,7 +109,7 @@ const UserDropdown = (props: Props) => {
           alt='Fulano de Tal'
           onClick={handleDropdownOpen}
           sx={{ width: 40, height: 40 }}
-          src={user?.avatar}
+          src={user?.avatar?.toString()}
         />
       </Badge>
       <Menu
@@ -138,7 +138,7 @@ const UserDropdown = (props: Props) => {
             >
               <Avatar
                 alt='avatar'
-                src={user?.avatar}
+                src={user?.avatar.toString()}
                 sx={{ width: '2.5rem', height: '2.5rem' }}
               />
             </Badge>
