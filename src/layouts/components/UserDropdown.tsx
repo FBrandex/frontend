@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment } from 'react'
+import { useState, SyntheticEvent, Fragment, useContext } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
@@ -29,6 +29,8 @@ import { useAuth } from 'src/hooks/useAuth'
 
 // ** Type Imports
 import { Settings } from 'src/@core/context/settingsContext'
+import { useGridApiEventHandler } from '@mui/x-data-grid'
+
 
 interface Props {
   settings: Settings
@@ -43,6 +45,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
   boxShadow: `0 0 0 2px ${theme.palette.background.paper}`
 }))
 
+
 const UserDropdown = (props: Props) => {
   // ** Props
   const { settings } = props
@@ -53,6 +56,8 @@ const UserDropdown = (props: Props) => {
   // ** Hooks
   const router = useRouter()
   const { logout } = useAuth()
+  const { user } = useAuth()
+
 
   // ** Vars
   const { direction } = settings
@@ -87,6 +92,7 @@ const UserDropdown = (props: Props) => {
     handleDropdownClose()
   }
 
+
   return (
     <Fragment>
       <Badge
@@ -103,7 +109,7 @@ const UserDropdown = (props: Props) => {
           alt='Fulano de Tal'
           onClick={handleDropdownOpen}
           sx={{ width: 40, height: 40 }}
-          src='/images/avatars/1.png'
+          src={user?.avatar}
         />
       </Badge>
       <Menu
@@ -131,8 +137,8 @@ const UserDropdown = (props: Props) => {
               }}
             >
               <Avatar
-                alt='Fulano de Tal'
-                src='/images/avatars/1.png'
+                alt='avatar'
+                src={user?.avatar}
                 sx={{ width: '2.5rem', height: '2.5rem' }}
               />
             </Badge>
@@ -144,12 +150,12 @@ const UserDropdown = (props: Props) => {
                 flexDirection: 'column'
               }}
             >
-              <Typography sx={{ fontWeight: 600 }}>Fulano de Tal</Typography>
+              <Typography sx={{ fontWeight: 600 }}>{user?.fullName}</Typography>
               <Typography
                 variant='body2'
                 sx={{ fontSize: '0.8rem', color: 'text.disabled' }}
               >
-                Admin
+                {user?.role}
               </Typography>
             </Box>
           </Box>

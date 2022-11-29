@@ -7,28 +7,28 @@ import mock from 'src/@fake-db/mock'
 // ** Types
 import { UserDataType } from 'src/context/types'
 
-const users: UserDataType[] = [
-  {
-    id: 1,
-    role: 'admin',
-    password: 'default123',
-    fullName: 'Administrador XProp',
-    username: 'admin',
-    email: 'dev@xprop.com.br'
-  },
-  {
-    id: 2,
-    role: 'client',
-    password: 'default123',
-    fullName: 'Cliente Padrão',
-    username: 'clientepadrao',
-    email: 'clientepadrao@xproptrading.com'
-  }
-]
+// const users: UserDataType[] = [
+//   {
+//     id: 1,
+//     role: 'admin',
+//     password: 'default123',
+//     fullName: 'Administrador XProp',
+//     username: 'admin',
+//     email: 'dev@xprop.com.br'
+//   },
+//   {
+//     id: 2,
+//     role: 'client',
+//     password: 'default123',
+//     fullName: 'Cliente Padrão',
+//     username: 'clientepadrao',
+//     email: 'clientepadrao@xproptrading.com'
+//   }
+// ]
 
 // ! These two secrets should be in .env file and not in any other file
 const jwtConfig = {
-  secret: 'dd5f3089-40c3-403d-af14-d0c228b05cb4',
+  secret: 'mycustomuselongsecret',
   refreshTokenSecret: '7c4c1c50-3230-45bf-9eae-c9b2e401c767'
 }
 

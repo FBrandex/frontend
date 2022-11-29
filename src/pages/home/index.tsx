@@ -4,13 +4,16 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import { useAuth } from 'src/hooks/useAuth'
 
 const Home = () => {
+  const { user } = useAuth()
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Bem vindo, Administrador!'></CardHeader>
+          <CardHeader title={`Bem vindo, ${user?.fullName}!`}></CardHeader>
           <CardContent>
             <Typography>Navegue entre as opções do menu.</Typography>
           </CardContent>
@@ -27,8 +30,10 @@ const Home = () => {
           </CardContent>
         </Card>
       </Grid> */}
-    </Grid>
+    </Grid >
   )
 }
+
+Home.authGuard = true
 
 export default Home

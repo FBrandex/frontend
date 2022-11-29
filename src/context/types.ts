@@ -13,11 +13,25 @@ export type RegisterParams = {
 
 export type UserDataType = {
   id: number
+  clientCod: number
   role: string
   email: string
   fullName: string
   username: string
-  password: string
+  telephone: string
+  cellphone: string
+  taxId: number
+  brithdate: string
+  addressStreet: string
+  addressNumber: string
+  complement: string
+  zip: string
+  district: string
+  city: string
+  state: string
+  contry: string
+  status: string // definir status
+  lgpdCheck: boolean
   avatar?: string | null
 }
 

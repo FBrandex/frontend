@@ -13,6 +13,7 @@ import authConfig from 'src/configs/auth'
 // ** Types
 import { AuthValuesType, RegisterParams, LoginParams, ErrCallbackType, UserDataType } from './types'
 
+
 // ** Defaults
 const defaultProvider: AuthValuesType = {
   user: null,
@@ -44,23 +45,23 @@ const AuthProvider = ({ children }: Props) => {
   useEffect(() => {
     const initAuth = async (): Promise<void> => {
       setIsInitialized(true)
-      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
+      const storedToken = "Bearer " + window.localStorage.getItem(authConfig.storageTokenKeyName)!
       if (storedToken) {
         setLoading(true)
         await axios
-          .get(authConfig.meEndpoint, {
+          .get('http://54.163.188.130:5000/user/me', {
             headers: {
               Authorization: storedToken
             }
           })
           .then(async response => {
             setLoading(false)
-            setUser({ ...response.data.userData })
+            setUser({ ...response.data })
           })
           .catch(() => {
             localStorage.removeItem('userData')
             localStorage.removeItem('refreshToken')
-            localStorage.removeItem('accessToken')
+            localStorage.removeItem('Authorization')
             setUser(null)
             setLoading(false)
           })
@@ -73,25 +74,23 @@ const AuthProvider = ({ children }: Props) => {
 
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     axios
-      .post(authConfig.loginEndpoint, params)
+      .post('http://54.163.188.130:5000/auth/login', params)
       .then(async res => {
-        window.localStorage.setItem(authConfig.storageTokenKeyName, res.data.accessToken)
+        window.localStorage.setItem(authConfig.storageTokenKeyName, res.data.Authorization)
       })
       .then(() => {
         axios
-          .get(authConfig.meEndpoint, {
+          .get('http://54.163.188.130:5000/user/me', {
             headers: {
-              Authorization: window.localStorage.getItem(authConfig.storageTokenKeyName)!
+              Authorization: "Bearer " + window.localStorage.getItem(authConfig.storageTokenKeyName)!
             }
           })
           .then(async response => {
             const returnUrl = router.query.returnUrl
-
-            setUser({ ...response.data.userData })
-            await window.localStorage.setItem('userData', JSON.stringify(response.data.userData))
-
+            delete response.data.password
+            setUser({ ...response.data })
+            await window.localStorage.setItem('userData', JSON.stringify(response.data))
             const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
-
             router.replace(redirectURL as string)
           })
       })
