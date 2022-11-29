@@ -89,7 +89,8 @@ const AuthProvider = ({ children }: Props) => {
             const returnUrl = router.query.returnUrl
             delete response.data.password
             setUser({ ...response.data })
-            window.localStorage.setItem('userData', response.data)
+            
+            // await window.localStorage.setItem('userData', JSON.stringify(response.data))
             const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
             router.replace(redirectURL as string)
           })
